@@ -141,9 +141,10 @@ async def button(ctx):
                         
         @discord.ui.button(label="Breach Scanner", style=discord.ButtonStyle.red)
         async def skill_6(self, button: discord.ui.Button, interaction: discord.Interaction):
-            embed=discord.Embed(title="작업 진행중... ETA: Unknown.",url="https://twitter.com/scpslofficial/status/1629936604059156480",description="주목! 이기능은 아직 추가되지 않았습니다..",color=0xEC2222)
+            embed=discord.Embed(title="작업 진행중... ETA: Unknown.",description="주목! 이기능은 아직 추가되지 않았습니다..",color=0xEC2222)
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/d/db/079Death.gif')
-            await interaction.response.edit_message(embed=embed)
+            embed2 = discord.Embed(title="new data detected",description="새로운 자료가 제시되었습니다",url="https://twitter.com/scpslofficial/status/1629936604059156480")
+            await interaction.response.edit_message(embeds0=[embed,embed2])
             await ctx.respond("'Note: This section contains information that is months old, it may no longer be as accurate'")
                         
         @discord.ui.button(label="Alpha Warhead Control", style=discord.ButtonStyle.red)
