@@ -688,7 +688,7 @@ async def ping(ctx):
     
 @bot.slash_command(name='high-explosive-grenade')
 async def ping(ctx):
-    embed = discord.Embed(title='High-Explosive Grenade',url="https://en.scpslgame.com/index.php?title=High-Explosive_Grenade",description='Weapon',color=0x0096FF)
+    embed = discord.Embed(title=('```High-Explosive Grenade```'),url="https://en.scpslgame.com/index.php?title=High-Explosive_Grenade",description='Weapon',color=0x0096FF)
     embed.set_author(name='Grenades',icon_url='https://cdn-icons-png.flaticon.com/512/1204/1204537.png')
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/4/44/GrenadeIcon.png/375px-GrenadeIcon.png')
     embed.set_image(url='https://hub.scpslgame.com/images/f/f2/Grenade_Equip_Animation.gif')
@@ -727,7 +727,7 @@ async def com45(ctx):
 
 @bot.slash_command(name="heavy-armor")
 async def heavy_armor(ctx):
-    embed = discord.Embed(title='Heavy Armor',color=0xaf8faa)
+    embed = discord.Embed(title='고강도 방어구',color=0xaf8faa)
     embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/7/77/HeavyArmorIcon.png/300px-HeavyArmorIcon.png")
     embed.add_field(name="body 보호",value="```fix\n80%```")
     embed.add_field(name="head 보호",value="```fix\n80%```")
@@ -755,8 +755,8 @@ async def cde(ctx,error):
 
 @bot.slash_command(name="시설경비")
 async def fg(ctx):
-    embed = discord.Embed(title="시설 경비원",description="적 : 혼돈의반란 & SCP\n아군:MTF & 과학자\n중립:D계급인원",color=0x5B6370)
-    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/3/3e/Facility_Guard_%2812.0%29.png/653px-Facility_Guard_%2812.0%29.png')
+    embed = discord.Embed(title="시설 경비원",description="적 : 혼돈의반란 & SCP\n아군:MTF & 과학자\n중립 또는 적:D계급인원",color=0x5B6370)
+    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/7/75/GuardIcon.png/180px-GuardIcon.png')
     file = discord.File("guard inventory.png",filename="image.png")
     embed.set_image(url="attachment://image.png")
     await ctx.respond(embed=embed,file=file)
@@ -766,7 +766,7 @@ async def fge(ctx,error):
 
 @bot.slash_command(name="과학자")
 async def scientist(ctx):
-    embed = discord.Embed(title="과학자",color=0xFFFF7C)
+    embed = discord.Embed(title="과학자",description="중립 또는 적: D계급인원 \n협력 : MTF&시설경비\n적 : SCP",color=0xFFFF7C)
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/9/90/zScientist_%2812.0%29.png/653px-Scientist_%2812.0%29.png')
     file = discord.File("Scientist inventory.png",filename="image.png")
     embed.set_image(url="attachment://image.png")
@@ -777,7 +777,7 @@ async def se(ctx,error):
 
 @bot.slash_command(name="mtf_captain")
 async def mtfc(ctx):
-    embed = discord.Embed(title="MTF 대위",url="https://en.scpslgame.com/index.php?title=Mobile_Task_Force",color=0x003DCA)
+    embed = discord.Embed(title="MTF 대위",description="적 : 혼돈의반란 & SCP\n아군:MTF & 과학자\n중립 또는 적:D계급인원",url="https://en.scpslgame.com/index.php?title=Mobile_Task_Force",color=0x003DCA)
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/5/55/NTF_%2812.0%29.png/653px-NTF_%2812.0%29.png')
     file = discord.File("mtf.png",filename="image.png")
     embed.set_image(url="attachment://image.png")
@@ -833,14 +833,14 @@ async def chaous_error(ctx):
 async def candy(ctx,
             candy:Option(str,"Candy list",choices=["red","plurple","blue","green","yellow","rainbow","pink","SCP330"])):
     if candy == "pink":
-        embed = discord.Embed(title="Pink Candy",color=0xFFCCFF)
+        embed = discord.Embed(title="Pink Candy",color=0xFF0089)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/5/54/IconCandyPink.png/150px-IconCandyPink.png")
         embed.set_image(url="https://hub.scpslgame.com/images/thumb/0/07/UnknownIcon.png/120px-UnknownIcon.png")
         embed.add_field(name="기능1",value="플래이어는 자폭합니다 Xb")
         embed.set_footer(text="확률 : 0%")
         await ctx.respond(embed=embed)
     if candy == "blue":
-        embed = discord.Embed(title="Blue Candy",color=0x00BCFF)
+        embed = discord.Embed(title="Blue Candy",color=0x00FFFF)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/35/IconCandyBlue.png/150px-IconCandyBlue.png")
         embed.set_image(url="https://hub.scpslgame.com/images/e/e8/Hume_Shield_Bar.png")
         embed.add_field(name="기능1",value="영구적인 30AHP 를 제공합니다.")
@@ -856,7 +856,7 @@ async def candy(ctx,
         await ctx.respond(embed=embed)
 
     if candy == "yellow":
-        embed = discord.Embed(title="yellow candy",color=0xFFF700)
+        embed = discord.Embed(title="yellow candy",color=0xFFD500)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/b8/IconCandyYellow.png/100px-IconCandyYellow.png")
         embed.add_field(name="기능1",value="스태미나 25% 회복")
         embed.add_field(name="기능2",value="활렬효과 8초간 부여")
@@ -864,14 +864,14 @@ async def candy(ctx,
         embed.set_footer(text="확률: 16.67%")
         await ctx.respond(emebd=embed)
     if candy == "green":
-        embed = discord.Embed(title="green candy",color=0x1AFF00)
+        embed = discord.Embed(title="green candy",color=0x44FF00)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/21/IconCandyRed.png/100px-IconCandyRed.png")
         embed.add_field(name="HP120 재생 (1초간 1HP)")
         embed.set_footer(text="확률: 16.67%")
         await ctx.respond(embed=embed)
 
     if candy == "plurple":
-        embed = discord.Embed(title="plurple candy",color=0xC300D8)
+        embed = discord.Embed(title="plurple candy",color=0xAB00FF)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/8/8a/IconCandyPurple.png/100px-IconCandyPurple.png")
         embed.add_field(name="기능1",value="손상 감소(4015초 동안) + Hp 15재생")
         embed.set_footer(text="확률: 16.67%")
