@@ -893,8 +893,8 @@ async def candy(ctx,
         
 @bot.slash_command(name="프로필")
 async def profile(ctx):
-    embed = discord.Embed(title="profile")
-    embed.set_image(url=ctx.author.avatar.url)
+    embed = discord.Embed(title=ctx.user.name)
+    embed.set_footer(url=ctx.author.avatar.url)
     await ctx.respond(embed=embed)
 
 bot.run(token)
