@@ -687,7 +687,7 @@ async def ping(ctx):
     await ctx.respond(embed=embed)
     
 @bot.slash_command(name='high-explosive-grenade')
-async def high_explosive_grenade(ctx):
+async def ping(ctx):
     embed = discord.Embed(title='High-Explosive Grenade',url="https://en.scpslgame.com/index.php?title=High-Explosive_Grenade",description='Weapon',color=0x0096FF)
     embed.set_author(name='Grenades',icon_url='https://cdn-icons-png.flaticon.com/512/1204/1204537.png')
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/4/44/GrenadeIcon.png/375px-GrenadeIcon.png')
@@ -892,9 +892,17 @@ async def candy(ctx,
         await ctx.respond(embed = embed)
         
 @bot.slash_command(name="프로필")
+@commands.is_owner()
 async def profile(ctx):
     embed = discord.Embed(title=ctx.user.name)
     embed.set_footer(url=ctx.author.avatar.url)
     await ctx.respond(embed=embed)
 
+@profile.error
+async def error(ctx,error):
+    await ctx.respond(error)
+
+@ping.error
+async def ping_error(error,ctx):
+    await ctx.respond(error)
 bot.run(token)
