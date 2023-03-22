@@ -144,14 +144,14 @@ async def button(ctx):
             embed=discord.Embed(title="작업 진행중... ETA: Unknown.",description="주목! 이기능은 아직 추가되지 않았습니다..",color=0xEC2222)
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/d/db/079Death.gif')
             embed2 = discord.Embed(title="new data detected",description="새로운 자료가 제시되었습니다",url="https://twitter.com/scpslofficial/status/1629936604059156480")
-            await interaction.response.edit_message(embeds0=[embed,embed2])
-            await ctx.respond("'Note: This section contains information that is months old, it may no longer be as accurate'")
+            await interaction.response.edit_message(embeds=[embed,embed2])
                         
-        @discord.ui.button(label="Alpha Warhead Control", style=discord.ButtonStyle.red)
+        @discord.ui.button(label="Alpha Warhead Control", style=discord.ButtonStyle.gray,disabled=True)
         async def skill_7(self, button: discord.ui.Button, interaction: discord.Interaction):
-            embed=discord.Embed(title="Analysis in Progress. ETA: Unknown.",description="ATTENTION! This feature has yet to be added to the beta.",color=0xEC2222)
-            embed.set_author(name="tear5",icon_url="https://hub.scpslgame.com/images/9/95/CATNUKE2.png")
-            embed.set_thumbnail(url='https://hub.scpslgame.com/images/d/db/079Death.gif')
+            embed=discord.Embed(title="alpha warhead overdrive",description="ATTENTION! This feature has yet to be added to the beta.",color=0xEC2222)
+            embed.set_author(name="tear5",icon_url="https://hub.scpslgame.com/images/thumb/9/9a/SCPCAT_079.png/180px-SCPCAT_079.png")
+            embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/f/fe/NEWWarheadCAT.png/180px-NEWWarheadCAT.png')
+            embed
             await interaction.response.edit_message(embed=embed)
             
     await ctx.respond("red=disable\ngray=tear1\nblurple=high tear\ngreen=new option", view=Button())
