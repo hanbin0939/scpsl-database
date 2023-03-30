@@ -343,14 +343,13 @@ async def baldy(ctx):
 @bot.slash_command(name='jailbird',description='근접무기')
 #@commands.is_owner()
 async def Jailbird(ctx):
-    #file = discord.File('vega/jailbird.gif',filename='jailbird.gif')
     embed = discord.Embed(title='Jailbird',url="https://en.scpslgame.com/index.php?title=Jailbird",description=' melee weapon',color=0x2a5098)
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/8/87/JailbirdIcon.png/375px-JailbirdIcon.png')
     embed.set_image(url='https://steamuserimages-a.akamaihd.net/ugc/2026089936704196490/B28A6DF61D0A5567AF4BAD0C2CBAF18BF4CDDE36/')
     embed.set_author(name='Special Weaponry',icon_url='https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png')
     embed.add_field(name="기본대미지", value="대미지:50~200", inline=False)
     embed.add_field(name="SCP049-2 대미지", value="대미지:200~800", inline=False)
-    embed.set_footer(text="얻는방법 : ||comeing soon....||")
+    embed.set_footer(text="얻는방법 : SCP914 를 사용\n micro H.I.D 에서 course 로 하면 50% 확률로 나옴\n13.0기준")
     await ctx.respond(embed=embed)
 
     
@@ -710,7 +709,7 @@ async def ping(ctx):
     
 @bot.slash_command(name='com-45',description='게틀링 건 권총')
 #@commands.is_owner()
-async def com45(ctx):
+async def ping(ctx):
     embed = discord.Embed(title=str("```COM-45```"),url="https://en.scpslgame.com/index.php?title=COM-45",description='특수무기',color=0xadadad)
     embed.set_author(name='Special Weaponry',icon_url='https://t4.ftcdn.net/jpg/05/38/61/51/360_F_538615190_uf3p4hIKSAjwDmWyIcFVhbC97iciWRU2.jpg')
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/d/d9/IconCom45.png/375px-IconCom45.png')
@@ -726,7 +725,7 @@ async def com45(ctx):
     print('>>com45 is used by:',ctx.user.name)
 
 @bot.slash_command(name="heavy-armor")
-async def heavy_armor(ctx):
+async def ping(ctx):
     embed = discord.Embed(title='고강도 방어구',color=0xaf8faa)
     embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/7/77/HeavyArmorIcon.png/300px-HeavyArmorIcon.png")
     embed.add_field(name="body 보호",value="```fix\n80%```")
@@ -735,7 +734,7 @@ async def heavy_armor(ctx):
     await ctx.respond(embed=embed)
 
 @bot.slash_command(name="combat-armor")
-async def combat_armor(ctx):
+async def ping(ctx):
     embed = discord.Embed(title="전투방탄복",url="https://en.scpslgame.com/index.php?title=Combat_Armor",color=0xFF8E00)
     embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/e/e2/CombatArmorIcon.png/300px-CombatArmorIcon.png")
     embed.add_field(name="헤드 보호",value="80%")
@@ -905,4 +904,11 @@ async def error(ctx,error):
 @ping.error
 async def ping_error(error,ctx):
     await ctx.respond(error)
+
+@bot.slash_command(name="scpsl-update")
+async def ping(ctx):
+    embed = discord.Embed(title="SCPSL 13.0 update note",description="donate : https://www.patreon.com/HubertMoszka ",url="https://patreon.scpslgame.com/posts/view/fc31dfcb-62db-44c6-9d41-ed33c6b1c50c")
+    embed.set_image(url="https://cdn.discordapp.com/attachments/472406978908389376/1090699112481030214/image.png")
+    embed.set_footer(text="click the title and check the patreon portal.")
+    await ctx.respond("```ansi\n[2;32mscpsl [2;31m13.0 [0m[2;32mpatreon beta [0m[2;33mis open in 4tear(25$)\n[0m[2;32m[2;33m[0m[2;32m[0m[2;41m[2;41m[0m[2;41m[0m[2;34m[0m\n```",embed = embed)
 bot.run(token)
