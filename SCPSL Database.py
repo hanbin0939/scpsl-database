@@ -21,7 +21,6 @@ async def on_ready():
     print("commands is ready!",bot.user)
     await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="SCP:Secreat Laboratory"))
     
-
     
     
 @bot.slash_command(name='scp079')
@@ -156,6 +155,14 @@ async def button(ctx):
             
     await ctx.respond("red=disable\ngray=tear1\nblurple=high tear\ngreen=new option", view=Button())
 
+@bot.slash_command(name="scp-2176")
+async def ping(ctx):
+    embed = discord.Embed(title="SCP2176",description="ghost light",color=0x008000)
+    embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/21/2176Icon.png/300px-2176Icon.png")
+    embed.add_field(name="기능1.",value="SCP079의 전력을 0으로 만들고 몇초간 전력을 뺍니다.")
+    embed.add_field(name="기능2.",value="해당 방은 일시적으로 문을 럭다운및 정전됩니다.")
+    await ctx.respond(embed=embed)
+
 @bot.slash_command(name="medical-item")
 async def medical_item(ctx):
     class Medic(discord.ui.View):
@@ -200,6 +207,7 @@ async def ping(ctx):
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/a/a2/106_Icon.png/180px-106_Icon.png')
     embed.add_field(name="스토킹",value="무적 상태가 되면서 매우 빠른속도랑 HS 복구")
     embed.add_field(name="hunter Atlas",value="본인이 원하는 위치로 순간이동")
+    embed.set_footer(text="나는 x나게 무적이다!!!")
     await ctx.respond(embed=embed)
     
 @bot.slash_command(name='scp173')
@@ -216,27 +224,7 @@ async def ping(ctx):
     embed=discord.Embed(title='SCP049',url="https://en.scpslgame.com/index.php?title=SCP-049",description="Cardiac Arrest\nResurrection\nWaste Not Want Not\nGood Sense of The Doctor\nThe Doctor's Call\n\n\nHP:2000\nDamage:160~즉사\nHS:200~500",color=0xEC2222)
     embed.set_author(name='scp tear : Eculid',icon_url='https://www.pngkey.com/maxpic/u2t4q8e6q8i1a9w7/')
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/2/2c/049F1.png/338px-049F1.png')
-    embed.set_image(url='https://hub.scpslgame.com/images/thumb/5/5b/049RoomOverview.jpg/600px-049RoomOverview.jpg')
-    embed.set_footer(text="```The doctor calmly awaits his next patient. It intends to administer the cure to those ridden with what it claims to \nbe the ‘Pestilence’. Do not let its calm demeanor fool you. Direct contact means certain death. This may only \nlast a moment for, like any medical professional, the doctor will strive to keep you alive.```")
     await ctx.respond(embed=embed)
-    
-@bot.slash_command(name='scp049-skill')
-async def button(ctx):
-        class Button(discord.ui.View):
-            @discord.ui.button(label=" Cardiac Attack", style=discord.ButtonStyle.grey)
-            async def skill_1(self, button: discord.ui.Button, interaction: discord.Interaction):
-                embed = discord.Embed(title='heart attack',description='160~direct kill')
-                embed.set_image(url='https://cdn.discordapp.com/attachments/1042942966592970756/1044773150119964764/image.png')
-                embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/0/06/049Halloween21.png/156px-049Halloween21.png')
-                embed.set_footer(text="When SCP-049 attacks a pslayer, the victim will rapidly lose health, suffering from a cardiac arrest.\nThe cardiac arrest can be survived if treated, but will result in death sooner if left untreated. A human may survive in the following ways:\nOutlasting the effect by using well timed medkits.\nUsing Adrenaline.\nUsing SCP-500. ")
-                await interaction.response.edit_message(embed=embed)
-                
-            @discord.ui.button(label="Doctor's call", style=discord.ButtonStyle.grey)
-            async def good_sence_of_doctor(self, button: discord.ui.Button, interaction: discord.Interaction):
-                embed = discord.Embed(title="Doctor's call",description='give a HS from 049-2')
-                embed.set_image(url='https://cdn.discordapp.com/attachments/1042942966592970756/1044773686273658940/image.png')
-                await interaction.response.edit_message(embed=embed)
-        await ctx.send(view=Button())
 
 
 @bot.slash_command(title='scp939',description='with many voices')
@@ -244,12 +232,11 @@ async def scp939(ctx):
     embed = discord.Embed(title='SCP939',url="https://en.scpslgame.com/index.php?title=SCP-939",description='with many voices')
     embed.set_author(name='scp tear : KETER',icon_url='')
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/3/35/939_Icon.png/240px-939_Icon.png')
-    embed.set_image(url='https://hub.scpslgame.com/images/thumb/4/4c/939MidLunge.jpg/840px-939MidLunge.jpg')
     embed.add_field(name='no armor',value='40/d',inline=True)
     embed.add_field(name='light armor',value='36/d',inline=True)
     embed.add_field(name='combat armor',value='34/d',inline=True)
     embed.add_field(name='heavy armor',value='32/d',inline=True)
-    embed.set_footer(text="SCP Class",icon_url='https://hub.scpslgame.com/images/thumb/4/44/NEWSCPCAT.png/240px-NEWSCPCAT.png')
+    embed.set_footer(text="what the Dog Doing??",icon_url='https://hub.scpslgame.com/images/thumb/4/44/NEWSCPCAT.png/240px-NEWSCPCAT.png')
     await ctx.respond(embed=embed)
     
 @bot.slash_command(name='scp-018',description='superball')
@@ -304,26 +291,10 @@ async def scp244(ctx):
     embed.add_field(name="SCP-106",value="""공격 쿨다온 속도 증가""",inline=True)
     await ctx.respond(embed=embed)
 
-@bot.slash_command(name='scpsl-private')
-async def pb(ctx,
-            text:Option(str,"버전",choices=['patreon3','patreon4','patreon5'])):
-    
-    if text == 'patreon3':
-        await ctx.respond("https://drive.google.com/file/d/1cTyNAaGR2yEDUs1CPL34PbvvgLS0Fp2g/view")
-    if text == 'patreon4':
-        await ctx.respond("https://drive.google.com/file/d/14GKSu1rH7J1XyVuNTN5-6-KHL22ynCJO/view")
-    if text == 'patreon5':
-        await ctx.respomd("https://drive.google.com/file/d/1d1n9OSwM_aDwjCswHZVFfQaJ5PABrHYW/view")
-        
-@bot.slash_command(neme="scp999")
-async def scp999(ctx):
-    embed = discord.Embed(title="SCP999",description='April Fool',color=0xffc400)
-    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/1/1b/SCP-999_2.png/180px-SCP-999_2.png')
-    await ctx.respond(embed=embed)
-
-@bot.slash_command(title='scp096',description="shy guy(분노조절 잘해)")
+@bot.slash_command(title='scp096',description="shy guy")
 async def scp096(ctx):
     embed = discord.Embed(title='SCP096',url="https://en.scpslgame.com/index.php?title=SCP-096",description='분노조절 잘해(?)',color=0xff0000)
+    embed.set_author(name="SCP Subject",icon_url="https://hub.scpslgame.com/images/thumb/3/32/096_IconCAT.png/180px-096_IconCAT.png")
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/f/f2/Docile_096Render.png/135px-Docile_096Render.png')
     embed.set_image(url="https://static.wikia.nocookie.net/scp-secret-laboratory-official/images/5/5a/Enraging.gif/revision/latest/scale-to-width-down/250?cb=20200602170935")
     embed.add_field(name='공격',value='85 damage',inline=True)
@@ -345,7 +316,7 @@ async def baldy(ctx):
 async def Jailbird(ctx):
     embed = discord.Embed(title='Jailbird',url="https://en.scpslgame.com/index.php?title=Jailbird",description=' melee weapon',color=0x2a5098)
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/8/87/JailbirdIcon.png/375px-JailbirdIcon.png')
-    embed.set_image(url='https://steamuserimages-a.akamaihd.net/ugc/2026089936704196490/B28A6DF61D0A5567AF4BAD0C2CBAF18BF4CDDE36/')
+    embed.set_image(url='https://hub.scpslgame.com/images/thumb/8/88/JailbirdConceptArt.png/375px-JailbirdConceptArt.png')
     embed.set_author(name='Special Weaponry',icon_url='https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png')
     embed.add_field(name="기본대미지", value="대미지:50~200", inline=False)
     embed.add_field(name="SCP049-2 대미지", value="대미지:200~800", inline=False)
@@ -891,7 +862,6 @@ async def candy(ctx,
         await ctx.respond(embed = embed)
         
 @bot.slash_command(name="프로필")
-@commands.is_owner()
 async def profile(ctx):
     embed = discord.Embed(title=ctx.user.name)
     embed.set_footer(url=ctx.author.avatar.url)
@@ -911,4 +881,11 @@ async def ping(ctx):
     embed.set_image(url="https://cdn.discordapp.com/attachments/472406978908389376/1090699112481030214/image.png")
     embed.set_footer(text="click the title and check the patreon portal.")
     await ctx.respond("```ansi\n[2;32mscpsl [2;31m13.0 [0m[2;32mpatreon beta [0m[2;33mis open in 4tear(25$)\n[0m[2;32m[2;33m[0m[2;32m[0m[2;41m[2;41m[0m[2;41m[0m[2;34m[0m\n```",embed = embed)
+
+@bot.slash_command(name="scp-1576")
+async def ping(ctx):
+    embed = discord.Embed(title="SCP1576",description="마법의 소라고동",url="https://en.scpslgame.com/index.php?title=SCP-1576")
+    embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/24/SCP1576Icon.png/200px-SCP1576Icon.png")
+    embed.set_footer(text="이 아이탬을 사용시 30초간 죽은 사람과 대화를 할수 있습니다.")
+    embed.add_field(name="회득 방법 : 없음")
 bot.run(token)
