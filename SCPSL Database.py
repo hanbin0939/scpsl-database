@@ -21,8 +21,33 @@ async def on_ready():
     print("commands is ready!",bot.user)
     await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="SCP:Secreat Laboratory"))
     
-    
-    
+class ammo_list(discord.ui.View):
+    @discord.ui.button(label="5x56mm", style=discord.ButtonStyle.success)
+    async def ammo5_callback(self, button, interaction):
+        embed = discord.Embed(title="5x56mm")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/3f/5.56mm.png/642px-5.56mm.png")
+        await interaction.response.edit_message(embed=embed)
+    @discord.ui.button(label="9x19mm",style=discord.ButtonStyle.success)
+    async def ammo9_callback(Self, button, interaction):
+        embed = discord.Embed(title="9x19mm")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/7/74/9mm.png/585px-9mm.png")
+        await interaction.response.edit_message(embed=embed)
+    @discord.ui.button(label="7x62mm", style=discord.ButtonStyle.success)
+    async def ammo7_Callback(self,button,interaction):
+        embed = discord.Embed(title="7x62mm")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/7/7c/7.62mm.png/698px-7.62mm.png")
+        await interaction.response.edit_message(embed=embed)
+    @discord.ui.button(label="12 ghage buckshot", style=discord.ButtonStyle.success)
+    async def buckshot_callback(self,button,interaction):
+        embed = discord.Embed(title="12guage buckshot")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/c/c2/Buckshot.png/497px-Buckshot.png")
+        await interaction.response.edit_message(embed=embed)
+    @discord.ui.button(label=".44magnum", style=discord.ButtonStyle.success)
+    async def magnum_callback(self,button,interaction):
+        embed = discord.Embed(title="44 magnum")
+        embed.set_thumbnail(url="hhttps://hub.scpslgame.com/images/thumb/b/b7/44mag.png/646px-44mag.png")
+        await interaction.response.edit_message(embed=embed)
+        
 @bot.slash_command(name='scp079')
 async def ping(ctx):
     embed=discord.Embed(title='SCP079',description='OLD AI',color=0x8080FF)
@@ -330,7 +355,7 @@ async def ping(ctx):
     embed.set_author(name='Lunae Defence',icon_url='https://hub.scpslgame.com/images/thumb/0/09/LunaeLogo.png/300px-LunaeLogo.png')
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/f/f0/CrossvecIcon.png/375px-CrossvecIcon.png')
     embed.set_image(url='https://hub.scpslgame.com/images/0/09/Crossvec_Equip_Animation.gif')
-    embed.set_footer(text='기본피해량=24\n최대피해량=약84',icon_url='https://hub.scpslgame.com/images/thumb/7/7d/MTFPrivateIcon.png/180px-MTFPrivateIcon.png')
+    embed.set_footer(text='기본피해량=24\n최대피해량=약84',icon_url='https://hub.scpslgame.com/images/thumb/4/46/Icon9x19mm.png/53px-Icon9x19mm.png')
     class Button(discord.ui.View):
         @discord.ui.button(label='홀호그램 조준경', style=discord.ButtonStyle.blurple)
         async def hs(self, button: discord.ui.Button, interaction: discord.Interaction):
@@ -425,7 +450,7 @@ async def ping(ctx):
     embed.set_author(name='Lunae Defence',icon_url='https://hub.scpslgame.com/images/thumb/0/09/LunaeLogo.png/300px-LunaeLogo.png')
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/9/96/E11SRIcon.png/375px-E11SRIcon.png')
     embed.set_image(url='https://hub.scpslgame.com/images/2/23/E-11_Inspect_Animation.gif')
-    embed.set_footer(text='|Fire Rate:570\n|Damage Falloff:100m\n|Equip Time:0.73s\n|Pick-Up Time:0.8s\n|Weight:3.15kg\n|Length:87cm\n|Bullet Accuracy:0.05°\n|Hip Fire Accuracy:2°\n|aming accuracy:0.08°(with Bullet Accuracy)~0.13° (with Bullet Accuracy)',icon_url='https://hub.scpslgame.com/images/thumb/1/19/MTFCaptainIcon.png/180px-MTFCaptainIcon.png')
+    embed.set_footer(text='|Fire Rate:570\n|Damage Falloff:100m\n|Equip Time:0.73s\n|Pick-Up Time:0.8s\n|Weight:3.15kg\n|Length:87cm\n|Bullet Accuracy:0.05°\n|Hip Fire Accuracy:2°\n|aming accuracy:0.08°(with Bullet Accuracy)~0.13° (with Bullet Accuracy)',icon_url='https://hub.scpslgame.com/images/thumb/d/d7/Icon556x45.png/53px-Icon556x45.png')
     class Button(discord.ui.View):
         @discord.ui.button(label='go back', style=discord.ButtonStyle.gray)
         async def gb(self, button: discord.ui.Button, interaction: discord.Interaction):
@@ -433,7 +458,7 @@ async def ping(ctx):
             embed.set_author(name='Foundation Firearms',icon_url='https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png')
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/9/96/E11SRIcon.png/375px-E11SRIcon.png')
             embed.set_image(url='https://hub.scpslgame.com/images/2/23/E-11_Inspect_Animation.gif')
-            embed.set_footer(text='|Fire Rate:570\n|Damage Falloff:100m\n|Equip Time:0.73s\n|Pick-Up Time:0.8s\n|Weight:3.15kg\n|Length:87cm\n|Bullet Accuracy:0.05°\n|Hip Fire Accuracy:2°\n|aming accuracy:0.08°(with Bullet Accuracy)~0.13° (with Bullet Accuracy)',icon_url='https://hub.scpslgame.com/images/thumb/1/19/MTFCaptainIcon.png/180px-MTFCaptainIcon.png')
+            embed.set_footer(text='|Fire Rate:570\n|Damage Falloff:100m\n|Equip Time:0.73s\n|Pick-Up Time:0.8s\n|Weight:3.15kg\n|Length:87cm\n|Bullet Accuracy:0.05°\n|Hip Fire Accuracy:2°\n|aming accuracy:0.08°(with Bullet Accuracy)~0.13° (with Bullet Accuracy)',icon_url='https://hub.scpslgame.com/images/thumb/d/d7/Icon556x45.png/53px-Icon556x45.png')
             await interaction.response.edit_message(embed=embed)
 
         @discord.ui.button(label='Rifle Body', style=discord.ButtonStyle.gray)
@@ -522,7 +547,7 @@ async def ping(ctx):
     embed.set_author(name='Chaos Insurgency Firearms',icon_url='https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png')
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/e/ee/ShotgunIcon.png/250px-ShotgunIcon.png')
     embed.set_image(url='https://hub.scpslgame.com/images/c/c7/Shotgun_Equip_New.gif')
-    embed.set_footer(text='기본대미지=20\n최대대미지=70\n',icon_url='https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png')
+    embed.set_footer(text='기본대미지=20\n최대대미지=70\n',icon_url='https://hub.scpslgame.com/images/thumb/f/f4/Icon12ga.png/53px-Icon12ga.png')
     embed.add_field(name="기본 대미지:", value="66.64", inline=False)
     embed.add_field(name="최대 대미지", value="83.3", inline=False)
     await ctx.respond(embed=embed)
@@ -555,7 +580,7 @@ async def ping(ctx):
             embed = discord.Embed(title="리볼버", description="혼돈의 반란 특정 직업군에게 주어지는 보조무기.", color=0x1a7939)
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/b/b5/RevolverIcon.png/375px-RevolverIcon.png')
             embed.set_image(url='https://hub.scpslgame.com/images/e/e3/Revolver_Rare_Equip_Animation.png')
-            embed.set_footer(text='normal damage=32 \n maximem damege=*115',icon_url='https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png')
+            embed.set_footer(text='normal damage=32 \n maximem damege=*115',icon_url='https://hub.scpslgame.com/images/thumb/f/ff/Icon44cal.png/53px-Icon44cal.png')
             await interaction.response.edit_message(embed=embed)
         @discord.ui.button(label='10.5인치 베럴', style=discord.ButtonStyle.green)
         async def eb(self, button: discord.ui.Button, interaction: discord.Interaction):
@@ -576,14 +601,14 @@ async def ping(ctx):
     embed.set_author(name="Chaos Repressors",url="https://en.scpslgame.com/index.php?title=Chaos_Insurgent#Repressor%20",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/d/d4/LogicerIcon.png/375px-LogicerIcon.png')
     embed.set_image(url='https://hub.scpslgame.com/images/2/23/Logicer_Inspect_New.gif')
-    embed.set_footer(text='기본피해량=26.9\n최대피해량=94.15',icon_url='https://hub.scpslgame.com/images/thumb/7/75/Icon762x39.png/35px-Icon762x39.png')
+    embed.set_footer(text='기본피해량=26.9\n최대피해량=94.15',icon_url='https://hub.scpslgame.com/images/thumb/7/75/Icon762x39.png/53px-Icon762x39.png')
     class Button(discord.ui.View):
         @discord.ui.button(label='돌아가기', style=discord.ButtonStyle.green)
         async def gb(self, button: discord.ui.Button, interaction: discord.Interaction):
             embed = discord.Embed(title='Logicer',description=str('```arm\nHeavy_machin_gun```'),color=0x1a7939)
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/d/d4/LogicerIcon.png/375px-LogicerIcon.png')
             embed.set_image(url='https://hub.scpslgame.com/images/2/23/Logicer_Inspect_New.gif')
-            embed.set_footer(text='기본피해량=26.9\n최대피해량=94.15',icon_url='https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png')
+            embed.set_footer(text='기본피해량=26.9\n최대피해량=94.15',icon_url='https://hub.scpslgame.com/images/thumb/7/75/Icon762x39.png/53px-Icon762x39.png')
             await interaction.response.edit_message(embed=embed)
 
         @discord.ui.button(label='보정기', style=discord.ButtonStyle.green)
@@ -799,6 +824,14 @@ async def chaous_server(ctx):
 async def chaous_error(ctx):
     await ctx.respond(embed=no_acess)
 
+@bot.slash_command(name="scp-1576")
+async def ping(ctx):
+    embed = discord.Embed(title="SCP1576",description="마법의 소라고동",url="https://en.scpslgame.com/index.php?title=SCP-1576")
+    embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/24/SCP1576Icon.png/200px-SCP1576Icon.png")
+    embed.set_footer(text="이 아이탬을 사용시 30초간 죽은 사람과 대화를 할수 있습니다.")
+    embed.add_field(name="회득 방법 : 없음")
+    await ctx.respond(embed=embed)
+
 @bot.slash_command(name='candy-list')
 async def candy(ctx,
             candy:Option(str,"Candy list",choices=["red","plurple","blue","green","yellow","rainbow","pink","SCP330"])):
@@ -882,10 +915,8 @@ async def ping(ctx):
     embed.set_footer(text="click the title and check the patreon portal.")
     await ctx.respond("```ansi\n[2;32mscpsl [2;31m13.0 [0m[2;32mpatreon beta [0m[2;33mis open in 4tear(25$)\n[0m[2;32m[2;33m[0m[2;32m[0m[2;41m[2;41m[0m[2;41m[0m[2;34m[0m\n```",embed = embed)
 
-@bot.slash_command(name="scp-1576")
-async def ping(ctx):
-    embed = discord.Embed(title="SCP1576",description="마법의 소라고동",url="https://en.scpslgame.com/index.php?title=SCP-1576")
-    embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/24/SCP1576Icon.png/200px-SCP1576Icon.png")
-    embed.set_footer(text="이 아이탬을 사용시 30초간 죽은 사람과 대화를 할수 있습니다.")
-    embed.add_field(name="회득 방법 : 없음")
+@bot.slash_command()
+async def ammo(ctx):
+    await ctx.respond(view=ammo_list())
+
 bot.run(token)
