@@ -3,7 +3,7 @@ import discord
 from discord import default_permissions
 from discord.ext import commands
 from discord.commands import Option
-from data import token
+from config.data import token
 
 
 intents=discord.Intents.all()
