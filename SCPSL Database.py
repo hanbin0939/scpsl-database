@@ -751,6 +751,7 @@ async def cde(ctx,error):
 @bot.slash_command(name="시설경비")
 async def fg(ctx):
     embed = discord.Embed(title="시설 경비원",description="적 : 혼돈의반란 & SCP\n아군:MTF & 과학자\n중립 또는 적:D계급인원",color=0x5B6370)
+    embed.set_author(name="Military class",icon_url="https://hub.scpslgame.com/images/9/97/Guard_Keycard3.png")
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/7/75/GuardIcon.png/180px-GuardIcon.png')
     file = discord.File("guard inventory.png",filename="image.png")
     embed.set_image(url="attachment://image.png")
@@ -766,21 +767,29 @@ async def scientist(ctx):
     file = discord.File("Scientist inventory.png",filename="image.png")
     embed.set_image(url="attachment://image.png")
     await ctx.respond(embed=embed,file=file)
-@scientist.error
-async def se(ctx,error):
-    await ctx.respond(error)
 
 @bot.slash_command(name="mtf_captain")
 async def mtfc(ctx):
     embed = discord.Embed(title="MTF 대위",description="적 : 혼돈의반란 & SCP\n아군:MTF & 과학자\n중립 또는 적:D계급인원",url="https://en.scpslgame.com/index.php?title=Mobile_Task_Force",color=0x003DCA)
+    embed.set_author(name="Military class",icon_url="https://hub.scpslgame.com/images/8/8e/Captain_Keycard.png")
     embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/5/55/NTF_%2812.0%29.png/653px-NTF_%2812.0%29.png')
     file = discord.File("mtf.png",filename="image.png")
+    embed.set_image(url="attachment://image.png")
+    await ctx.respond(embed = embed , file=file)
+
+@bot.slash_command(name="mtf-private")
+async def ping(ctx):
+    embed = discord.Embed(title="MTF Private",description="구미호 병사",color=0x70C3FF)
+    embed.set_author(name="Military class",icon_url="https://hub.scpslgame.com/images/0/0a/Private_Keycard.png")
+    embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/1/19/MTFCaptainIcon.png/180px-MTFCaptainIcon.png")
+    file = discord.File("mtf_p.jpg",filename="image.png")
     embed.set_image(url="attachment://image.png")
     await ctx.respond(embed = embed , file=file)
 
 @bot.slash_command(name="chaos-insurgent-rifeman")
 async def ci(ctx):
     embed = discord.Embed(title="혼돈의 반란 소총수",description="Chaos Insurgent 의 병사",url="https://en.scpslgame.com/index.php?title=Chaos_Insurgent",color=0x1a7939)
+    embed.set_author(name="Military class",icon_url="https://hub.scpslgame.com/images/6/6e/Chaos_Insurgency_device.png")
     embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
     file = discord.File('chaous inventory.png',filename="image.png")
     embed.set_image(url="attachment://image.png")
