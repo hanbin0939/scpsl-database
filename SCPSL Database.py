@@ -348,7 +348,107 @@ async def Jailbird(ctx):
     embed.set_footer(text="얻는방법 : SCP914 를 사용\n micro H.I.D 에서 course 로 하면 50% 확률로 나옴\n13.0기준")
     await ctx.respond(embed=embed)
 
+@bot.slash_command(name='com-15', description="기본적인 호신용 권총")
+async def test(ctx):
+    embed = discord.Embed(title="COM-15", description="기본적인 호신용권총", color=0xadadad)
+    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/2/22/COM-15Icon.png/375px-COM-15Icon.png')
+    embed.set_image(url='https://hub.scpslgame.com/images/e/e8/COM-15_Inspect_Animation.gif')
+    embed.set_author(name='weapon')
+    embed.set_footer(text='| 기본대미지=25\n| 해드샷대미지=50',icon_url='https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png')
+    class Button(discord.ui.View):
+        @discord.ui.button(label='소음기', style=discord.ButtonStyle.gray)
+        async def button(self, button: discord.ui.Button, interaction: discord.Interaction):
+            embed = discord.Embed(title="Suppressor",description=str('''총알 정확도:+25%\n총소리:-60%\n준비시간:+0.17/s\n길이:+94\n무게:+46%'''))
+            embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/c/cd/COM-15Suppressor.png/180px-COM-15Suppressor.png')
+            await interaction.response.edit_message(embed=embed)
+        @discord.ui.button(label='17발 탄창', style=discord.ButtonStyle.gray)
+        async def big_mag(self, button: discord.ui.Button, interaction: discord.Interaction):
+            mag_17 = discord.Embed(title='Extended MAG',description='''ammo + 5\n준비시간:+0.06/s\n무게:+46%''')
+            mag_17.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/5/54/COM-15ExtendedMag.png/90px-COM-15ExtendedMag.png')
+            await interaction.response.edit_message(embed=mag_17)
+        @discord.ui.button(label='go back', style=discord.ButtonStyle.gray)
+        async def go_back(self, button: discord.ui.Button, interaction: discord.Interaction):
+            embed = discord.Embed(title="COM-15", description="기본적인 호신용권총", color=0xadadad)
+            embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/2/22/COM-15Icon.png/375px-COM-15Icon.png')
+            embed.set_image(url='https://hub.scpslgame.com/images/e/e8/COM-15_Inspect_Animation.gif')
+            embed.set_author(name='weapon')
+            embed.set_footer(text='| 기본대미지=25\n| 해드샷대미지=50',icon_url='https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png')
+            await interaction.response.edit_message(embed=embed)
+    await ctx.respond(embed=embed,view=Button())
+
     
+@bot.slash_command(name='com-18', description="기본적인 호신용 권총")
+async def ping(ctx):
+    embed = discord.Embed(title='COM-18', description="기본적인 호신용 권총", color=0x575757)
+    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/2/2e/IconCom18.png/375px-IconCom18.png')
+    embed.set_footer(text='기본대미지=20\n최대대미지=70\n',icon_url=('https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png'))
+    embed.set_author(name='weapon',icon_url=("https://hub.scpslgame.com/images/thumb/7/75/GuardIcon.png/180px-GuardIcon.png"))
+    class Button(discord.ui.View):
+        @discord.ui.button(label='iron sight', style=discord.ButtonStyle.gray)
+        async def iron_sight(self, button: discord.ui.Button, interaction: discord.Interaction):
+            #button.disabled = True
+            ise = discord.Embed(title='Red dot sight',description='zoom:1.22x')
+            ise.set_thumbnail(url='https://hub.scpslgame.com/images/f/f7/COM18IronSights.png')
+            await interaction.response.edit_message(embed=ise)
+        @discord.ui.button(label='iron sight', style=discord.ButtonStyle.gray)
+        async def red_sight(self, button: discord.ui.Button, interaction: discord.Interaction):
+            rd = discord.Embed(title='RED DOT SIGHT',description='Zoom:1.05x\nweight:+28%')
+            rd.set_thumbnail(url='https://hub.scpslgame.com/images/a/a0/COM18DotSight.png')
+            await interaction.response.edit_message(embed=rd)
+        @discord.ui.button(label='해비 배럴', style=discord.ButtonStyle.gray)
+        async def eb(self, button: discord.ui.Button, interaction: discord.Interaction):
+            exb = discord.Embed(title='확장 배럴',description='데미지:+15%\n관통력:+15%\n총알정확도:+11%\n발사간격:-11%\n길이:+11%\n무게:+69%')
+            exb.set_thumbnail(url='https://hub.scpslgame.com/images/b/ba/COM18Heavy.png')
+            await interaction.response.edit_message(embed=exb)
+        @discord.ui.button(label='go back', style=discord.ButtonStyle.gray)
+        async def gb(self, button: discord.ui.Button, interaction: discord.Interaction):
+            embed = discord.Embed(title='COM-18', description="기본적인 호신용 권총", color=0x575757)
+            embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/2/2e/IconCom18.png/375px-IconCom18.png')
+            embed.set_footer(text='기본대미지=20\n최대대미지=70\n',icon_url=('https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png'))
+            embed.set_author(name='weapon',icon_url=("https://hub.scpslgame.com/images/thumb/7/75/GuardIcon.png/180px-GuardIcon.png"))
+            await interaction.response.edit_message(embed=embed)
+    await ctx.respond(embed=embed,view = Button())
+    
+
+    
+@bot.slash_command(name='fsp-9', description=str("```시설경비의 주무기```"))
+async def ping(ctx):
+    embed = discord.Embed(title='FSP-9', description="mp7", color=0xadadad)
+    embed.set_author(name='Foundation Firearms',icon_url='https://hub.scpslgame.com/images/7/76/CUTCONTENTCAT5.png')
+    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/4/4d/FSP-9Icon.png/375px-FSP-9Icon.png')
+    embed.set_image(url='https://hub.scpslgame.com/images/9/9d/FSP-9_Equip_Animation.gif')
+    embed.set_footer(text='기본대미지=20\n최대대미지=70\n',icon_url='https://hub.scpslgame.com/images/thumb/7/75/GuardIcon.png/180px-GuardIcon.png')
+    
+    class Button(discord.ui.View):
+        @discord.ui.button(label='go back', style=discord.ButtonStyle.gray)
+        async def gb(self, button: discord.ui.Button, interaction: discord.Interaction):
+            embed = discord.Embed(title='FSP-9', description="mp7", color=0xadadad)
+            embed.set_author(name='Foundation Firearms',icon_url='https://hub.scpslgame.com/images/7/76/CUTCONTENTCAT5.png')
+            embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/4/4d/FSP-9Icon.png/375px-FSP-9Icon.png')
+            embed.set_image(url='https://hub.scpslgame.com/images/9/9d/FSP-9_Equip_Animation.gif')
+            embed.set_footer(text='기본대미지=20\n최대대미지=70\n',icon_url='https://hub.scpslgame.com/images/thumb/7/75/GuardIcon.png/180px-GuardIcon.png')
+            await interaction.response.edit_message(embed=embed)
+        @discord.ui.button(label='stock', style=discord.ButtonStyle.gray)
+        async def st(self, button: discord.ui.Button, interaction: discord.Interaction):
+            embed = discord.Embed(title="개머리판",description='조준사격 정확도:+100%\n조준사격 반동:-40%\n준비시간:+1.47/s\n길이:+51%')
+            embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/d/d1/FSP-9StockExtended.png/120px-FSP-9StockExtended.png')
+            await interaction.response.edit_message(embed=embed)
+        @discord.ui.button(label='손잡이', style=discord.ButtonStyle.gray)
+        async def fg(self, button: discord.ui.Button, interaction: discord.Interaction):
+            embed = discord.Embed(title="수직손잡이",description='반동:-30%\n준비사간:+0.93/s')
+            embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/1/13/FSP-9GripExtended.png/45px-FSP-9GripExtended.png')
+            await interaction.response.edit_message(embed=embed)
+        @discord.ui.button(label='ammo counter', style=discord.ButtonStyle.gray)
+        async def amc(self, button: discord.ui.Button, interaction: discord.Interaction):
+            embed = discord.Embed(title='Ammo Counter',description='준비시간:+0.24/s\n무게:+27%')
+            embed.set_thumbnail(url='https://hub.scpslgame.com/images/0/0e/FSP-9AmmoCounter.png')
+            await interaction.response.edit_message(embed=embed)
+        @discord.ui.button(label='lazer', style=discord.ButtonStyle.gray)
+        async def ls(self, button: discord.ui.Button, interaction: discord.Interaction):
+            embed = discord.Embed(title='Ammo Counter',description='Hip-Firing Accuracy +100%\n준비사간:0.24/s\n무게:+12%')
+            embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/2/25/FSP-9Laser.png/120px-FSP-9Laser.png')
+            await interaction.response.edit_message(embed=embed)
+    await ctx.respond(embed=embed,view=Button())
 @bot.slash_command(name='crossvec', description="구미호 병사의 표준 무기")
 async def ping(ctx):
     embed = discord.Embed(title='Crossvec',url="https://en.scpslgame.com/index.php?title=Crossvec",description=str('구미호 병사의 표준 기관단총'),color=0x1700ff)
