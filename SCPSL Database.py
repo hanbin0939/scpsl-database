@@ -183,8 +183,8 @@ async def button(ctx):
 @bot.slash_command(name="scp-2176")
 async def ping(ctx):
     embed = discord.Embed(title="SCP2176",description="ghost light",color=0x008000)
-    embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/21/2176Icon.png/300px-2176Icon.png")
-    embed.add_field(name="기능1.",value="SCP079의 전력을 0으로 만들고 몇초간 전력을 뺍니다.")
+    embed.set_thumbnail(url="https://hub.scpslgame.com/images/5/52/Updated2176Icon.png")
+    embed.add_field(name="기능1.",value="SCP079의 전력을 0으로 만들고 몇초간 전력을 무력화합니다.")
     embed.add_field(name="기능2.",value="해당 방은 일시적으로 문을 럭다운및 정전됩니다.")
     await ctx.respond(embed=embed)
 
@@ -277,7 +277,7 @@ async def ping(ctx):
 async def ping(ctx):
     embed = discord.Embed(title="SCP207",url="https://en.scpslgame.com/index.php?title=SCP-207",color=0xff0000)
     embed.set_author(name='SCPitem',icon_url='https://hub.scpslgame.com/images/thumb/8/8b/CATEFFECT.png/61px-CATEFFECT.png')
-    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/4/4f/NewSCP207Icon.png/300px-NewSCP207Icon.png')
+    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/d/dd/UpdatedSCP207Icon.png/300px-UpdatedSCP207Icon.png')
     embed.set_image(url='https://hub.scpslgame.com/images/4/45/207_Use_New.gif')
     embed.add_field(name='LV1',value='>>>207 X1 : 6.48m/sec ,-1HP.s',inline=False)
     embed.add_field(name='LV2',value='>>>207 X2 : 7.45m/sec , -1.5hp.s',inline=True)
@@ -449,6 +449,7 @@ async def ping(ctx):
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/2/25/FSP-9Laser.png/120px-FSP-9Laser.png')
             await interaction.response.edit_message(embed=embed)
     await ctx.respond(embed=embed,view=Button())
+    
 @bot.slash_command(name='crossvec', description="구미호 병사의 표준 무기")
 async def ping(ctx):
     embed = discord.Embed(title='Crossvec',url="https://en.scpslgame.com/index.php?title=Crossvec",description=str('구미호 병사의 표준 기관단총'),color=0x1700ff)
@@ -773,7 +774,7 @@ async def ping(ctx):
 async def ping(ctx):
     embed = discord.Embed(title=str("```MICRO H.I.D```"),url="https://en.scpslgame.com/index.php?title=Micro_H.I.D." ,description="Special Weaponry")
     embed.set_author(name='Special Weaponry',icon_url='https://hub.scpslgame.com/images/thumb/a/ab/AA3.png/75px-AA3.png')
-    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/d/d1/MicroHIDIcon.png/375px-MicroHIDIcon.png')
+    embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/d/d1/UpdatedMicroHIDIcon.png/375px-UpdatedMicroHIDIcon.png')
     embed.set_image(url='https://hub.scpslgame.com/images/f/fa/Micro_HID_Equip_New.gif')
     embed.add_field(name="ammo:", value="1", inline=False)
     embed.add_field(name="blast damage", value="90~1150", inline=False)
