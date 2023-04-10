@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-token = "MTA4MzYyNDg4MDA3NzAxMzA5Mw.GSXwaW.6vjcRQZO9MOPBxoZi7ojYOnMDDGP3qw7YNuN-g"
+
 
 
 class weapon(discord.ui.View):
@@ -103,7 +103,6 @@ class attachmant_com_18(discord.ui.View):
     @discord.ui.button(label='go home', style=discord.ButtonStyle.gray)
     async def go_home(self, button: discord.ui.Button, interaction: discord.Interaction):
         await interaction.response.edit_message(view=weapon())
-
     
 class attachmant_corssvec(discord.ui.View):
     @discord.ui.button(label="홀로그램 조준경",style=discord.ButtonStyle.success)
@@ -112,6 +111,27 @@ class attachmant_corssvec(discord.ui.View):
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/b5/CrossvecHoloSight.png/80px-CrossvecHoloSight.png")
         embed.add_field(name="배율:",value="1.05x")
         embed.add_field(name="무게:",value="+17%")
+        await interaction.response.edit_message(embed=embed,view=attachmant_corssvec())
+    @discord.ui.button(label="야간 조준경",style=discord.ButtonStyle.success)
+    async def nw_crossvec(self,button: discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="야간조준경")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/24/CrossvecNightVision.png/80px-CrossvecNightVision.png")
+        embed.add_field(name="배율:",value="1.85x")
+        embed.add_field(name="무게:",value="+17%")
+        embed.add_field(name="조준속도:",value="-25%")
+        embed.add_field(name="준비시간",value="+0.22/s")
+        embed.add_field(name="무게",value="+47%")
+        await interaction.response.edit_message(embed=embed,view=attachmant_corssvec())
+    @discord.ui.button(label="헤비베럴",style=discord.ButtonStyle.success)
+    async def heavy_barrel(self,button: discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="extented berrel")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/4b/CrossvecBarrelLong.png/150px-CrossvecBarrelLong.png")
+        embed.add_field(name="데미지",value="+5%")
+        embed.add_field(name="관통력",value="+10%")
+        embed.add_field(name="총알 정확도",value="+43%")
+        embed.add_field(name="준비시간",value="+0.32/s")
+        embed.add_field(name="길이",value="+35%")
+        embed.add_field(name="무게",value="+23%")
         await interaction.response.edit_message(embed=embed,view=attachmant_corssvec())
     @discord.ui.button(label="go back",style=discord.ButtonStyle.success)
     async def go_back(self,button: discord.ui.Button, interaction: discord.Interaction):

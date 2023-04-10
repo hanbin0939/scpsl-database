@@ -3,7 +3,8 @@ import discord
 from discord import default_permissions
 from discord.ext import commands , tasks
 from discord.commands import Option
-from data.beta_data import token  ,weapon , attachment
+from config.data import token_beta
+from data.beta_data import weapon , attachment
 from itertools import cycle
 guild = 1069174895893827604
 intents=discord.Intents.all()
@@ -40,4 +41,4 @@ async def add_beta_testing(ctx):
     await user.add_roles(role)
     await ctx.respond("이제 베타 태스팅에 참여할수 있습니다!")
 
-bot.run(token)
+bot.run(token_beta)
