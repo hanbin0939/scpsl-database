@@ -22,7 +22,7 @@ class weapon(discord.ui.View):
 
         @discord.ui.button(label="corssvec", style=discord.ButtonStyle.success)
         async def crossvec(self, button: discord.ui.Button, interaction: discord.Interaction):
-            embed = discord.Embed(title='Crossvec',url="https://en.scpslgame.com/index.php?title=Crossvec",description=str('구미호 병사의 표준 기관단총'),color=0x1700ff)
+            embed = discord.Embed(title='Crossvec',url="https://en.scpslgame.com/index.php?title=Crossvec",description=str('구미호 병사의 표준 기관단총'),color=0x70C3FF)
             embed.set_author(name='Lunae Defence',icon_url='https://hub.scpslgame.com/images/thumb/0/09/LunaeLogo.png/300px-LunaeLogo.png')
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/f/f0/CrossvecIcon.png/375px-CrossvecIcon.png')
             embed.set_image(url='https://hub.scpslgame.com/images/0/09/Crossvec_Equip_Animation.gif')
@@ -35,7 +35,6 @@ class weapon(discord.ui.View):
             embed.set_author(name='Lunae Defence',icon_url='https://hub.scpslgame.com/images/thumb/0/09/LunaeLogo.png/300px-LunaeLogo.png')
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/9/96/E11SRIcon.png/375px-E11SRIcon.png')
             embed.set_image(url='https://hub.scpslgame.com/images/2/23/E-11_Inspect_Animation.gif')
-            embed.set_footer(text='|Fire Rate:570\n|Damage Falloff:100m\n|Equip Time:0.73s\n|Pick-Up Time:0.8s\n|Weight:3.15kg\n|Length:87cm\n|Bullet Accuracy:0.05°\n|Hip Fire Accuracy:2°\n|aming accuracy:0.08°(with Bullet Accuracy)~0.13° (with Bullet Accuracy)',icon_url='https://hub.scpslgame.com/images/thumb/d/d7/Icon556x45.png/53px-Icon556x45.png')
             await interaction.response.edit_message(embed=embed,view=e_11_attachment())
 
         @discord.ui.button(label="AK",style=discord.ButtonStyle.success)
@@ -43,6 +42,17 @@ class weapon(discord.ui.View):
             embed = discord.Embed(title="AK",description="혼돈의 반란 소충수의 표준무기",color=0x008F1C)
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/33/NewAKIcon.png/375px-NewAKIcon.png")
             embed.set_image(url="https://hub.scpslgame.com/images/thumb/2/2f/AK_Render_2.jpg/1353px-AK_Render_2.jpg")
+            await interaction.response.edit_message(embed=embed,view=weapon())
+
+        @discord.ui.button(label="logicer",style=discord.ButtonStyle.success)
+        async def ak(self, button:discord.ui.Button, interaction: discord.Integration):
+            embed = discord.Embed(title="logicer",description="혼돈의 반란 기관총",color=0x008F1C)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/d4/LogicerIcon.png/250px-LogicerIcon.png")
+            embed.set_image(url="https://hub.scpslgame.com/images/2/23/Logicer_Inspect_New.gif")
+            await interaction.response.edit_message(embed=embed,view=logicar_attachment())
+
+
+
 
 
 
@@ -122,14 +132,14 @@ class attachmant_com_18(discord.ui.View):
 class attachmant_corssvec(discord.ui.View):
     @discord.ui.button(label="홀로그램 조준경",style=discord.ButtonStyle.success)
     async def holo_crossvec(self,button: discord.ui.Button, interaction: discord.Interaction):
-        embed = discord.Embed(title="홀로그램 사이트")
+        embed = discord.Embed(title="홀로그램 사이트",color=0x70C3FF)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/b5/CrossvecHoloSight.png/80px-CrossvecHoloSight.png")
         embed.add_field(name="배율:",value="1.05x")
         embed.add_field(name="무게:",value="+17%")
         await interaction.response.edit_message(embed=embed,view=attachmant_corssvec())
     @discord.ui.button(label="야간 조준경",style=discord.ButtonStyle.success)
     async def nw_crossvec(self,button: discord.ui.Button, interaction: discord.Interaction):
-        embed = discord.Embed(title="야간조준경")
+        embed = discord.Embed(title="야간조준경",color=0x70C3FF)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/24/CrossvecNightVision.png/80px-CrossvecNightVision.png")
         embed.add_field(name="배율:",value="1.85x")
         embed.add_field(name="무게:",value="+17%")
@@ -139,7 +149,7 @@ class attachmant_corssvec(discord.ui.View):
         await interaction.response.edit_message(embed=embed,view=attachmant_corssvec())
     @discord.ui.button(label="헤비베럴",style=discord.ButtonStyle.success)
     async def heavy_barrel(self,button: discord.ui.Button, interaction: discord.Interaction):
-        embed = discord.Embed(title="extented berrel")
+        embed = discord.Embed(title="extented berrel",color=0x70C3FF)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/4b/CrossvecBarrelLong.png/150px-CrossvecBarrelLong.png")
         embed.add_field(name="데미지",value="+5%")
         embed.add_field(name="관통력",value="+10%")
@@ -150,7 +160,7 @@ class attachmant_corssvec(discord.ui.View):
         await interaction.response.edit_message(embed=embed,view=attachmant_corssvec())
     @discord.ui.button(label="go back",style=discord.ButtonStyle.success)
     async def go_back(self,button: discord.ui.Button, interaction: discord.Interaction):
-        embed = discord.Embed(title='Crossvec',url="https://en.scpslgame.com/index.php?title=Crossvec",description=str('구미호 병사의 표준 기관단총'),color=0x1700ff)
+        embed = discord.Embed(title='Crossvec',url="https://en.scpslgame.com/index.php?title=Crossvec",description=str('구미호 병사의 표준 기관단총'),color=0x70C3FF)
         embed.set_author(name='Lunae Defence',icon_url='https://hub.scpslgame.com/images/thumb/0/09/LunaeLogo.png/300px-LunaeLogo.png')
         embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/f/f0/CrossvecIcon.png/375px-CrossvecIcon.png')
         embed.set_image(url='https://hub.scpslgame.com/images/0/09/Crossvec_Equip_Animation.gif')
@@ -161,7 +171,7 @@ class attachmant_corssvec(discord.ui.View):
         await interaction.response.edit_message(view=weapon())
 
 class e_11_attachment(discord.ui.View):
-    @discord.ui.button(label="Go home",style=discord.ButtonStyle.success)
+    @discord.ui.button(label="Go home",style=discord.ButtonStyle.gray)
     async def go_home(self,button: discord.ui.Button, interaction: discord.Interaction):
         await interaction.response.edit_message(view=weapon())
         
@@ -193,6 +203,15 @@ class e_11_attachment(discord.ui.View):
 
     @discord.ui.button(label="Recoil-Reducing Stock",style=discord.ButtonStyle.success)
     async def mag65(self, button: discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="Foregrip")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/c/c8/GripE11.png/60px-GripE11.png")
+        embed.add_field(name="반동",value="-33.3")
+        embed.add_field(name="조준속도",value="-15%")
+        embed.add_field(name="weight",value="+8%")
+        await interaction.response.edit_message(embed=embed,view=e_11_attachment())
+    
+    @discord.ui.button(label="손잡이",style=discord.ButtonStyle.success)
+    async def grip_e11(self, button: discord.ui.Button, interaction: discord.Interaction):
         embed = discord.Embed(title="Recoil-Reducing Stock")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/36/ShockStock.png/150px-ShockStock.png")
         embed.add_field(name="조준사격반동",value="-33.3")
@@ -200,4 +219,40 @@ class e_11_attachment(discord.ui.View):
         embed.add_field(name="준비시간",value="+0.08/s")
         embed.add_field(name="weight",value="+22%")
         await interaction.response.edit_message(embed=embed,view=e_11_attachment())
+    
+    @discord.ui.button(label="레이저 사이트",style=discord.ButtonStyle.success)
+    async def lz_e_11(self, button: discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="Laser Sight")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/a/ac/LaserE11.png/60px-LaserE11.png")
+        embed.add_field(name="지향사격정확도",value="+100.0%")
+        embed.add_field(name="weight",value="+11%")
+        await interaction.response.edit_message(embed=embed,view=e_11_attachment())
+
+    @discord.ui.button(label="rife body",style=discord.ButtonStyle.success)
+    async def rife_body(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="Rife body",description="조준사격 정확도를 늘려줍니다.")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/28/RifleBody.png/150px-RifleBody.png")
+        embed.add_field(name="데미지:",value="+7.5%")
+        embed.add_field(name="관통력:",value="+12.5%")
+        embed.add_field(name="발사속도:",value="-10%")
+        embed.add_field(name="준비시간:",value="+0.13/s")
+        embed.add_field(name="지향사격 정확도:",value="-26%")
+        embed.add_field(name="길이",value="+20%")
+        embed.add_field(name="무게",value="+46%")
+        await interaction.response.edit_message(embed=embed,view=e_11_attachment())
+
+class logicar_attachment(discord.ui.View):
+    @discord.ui.button(label="Go home",style=discord.ButtonStyle.gray)
+    async def go_home(self,button: discord.ui.Button, interaction: discord.Interaction):
+        await interaction.response.edit_message(view=weapon())
+
+    @discord.ui.button(label="Red dot",style=discord.ButtonStyle.success)
+    async def lg_reddot(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="Red dot sight")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/41/LogicerDotSight.png/90px-LogicerDotSight.png")
+        embed.add_field(name="배울",value="1.05x")
+        embed.add_field(name="무게",value="+2%")
+        await interaction.response.edit_message(view=weapon())
+
+    
 

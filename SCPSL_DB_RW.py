@@ -17,15 +17,15 @@ bot = commands.Bot(command_prefix='R!', intents=discord.Intents.all())
 async def on_ready():
     print("logined succesfully\n")
     print(f"{len(bot.guilds)} server joined\n")
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="privete beta..."))
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="public beta..."))
     #change_status.start()
 
 #@tasks.loop(seconds=5)    # n초마다 다음 메시지 출력
 #async def change_status():
 #    await bot.change_presence(activity=discord.Game(next(status)))
 
-@bot.slash_command(name="weponary",guild_ids=[guild])
-@commands.has_role("BETA TESTING")
+@bot.slash_command(name="weponary")
+#@commands.has_role("BETA TESTING")
 async def ping(ctx):
     await ctx.respond(view=weapon())
 
@@ -42,4 +42,7 @@ async def add_beta_testing(ctx):
     await user.add_roles(role)
     await ctx.respond("이제 베타 태스팅에 참여할수 있습니다!")
 
+@bot.slash_command(name="scp-item")
+async def scp_item(ctx):
+    await ctx.respond("NO >:(")
 bot.run(token_beta)
