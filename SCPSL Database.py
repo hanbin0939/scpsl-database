@@ -1028,4 +1028,7 @@ async def ping(ctx):
 async def ammo(ctx):
     await ctx.respond(view=ammo_list())
 
+@bot.command()
+async def update(ctx):
+    await ctx.respond("**the bot will be roworked** ||(beta testing in ghost world)||")
 bot.run(token)

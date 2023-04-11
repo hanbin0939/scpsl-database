@@ -4,24 +4,25 @@ from discord import default_permissions
 from discord.ext import commands , tasks
 from discord.commands import Option
 from config.data import token_beta
-from data.beta_data import weapon , attachment
+from data.beta_data import weapon
 from itertools import cycle
 guild = 1069174895893827604
 intents=discord.Intents.all()
 intents.message_content = True
 intents.members = True
 bot = commands.Bot(command_prefix='R!', intents=discord.Intents.all())
-status = cycle(["scpsl database rework bot", "made bt hanbin#0939", "SCP : Secreat Laboratory"])
+#status = cycle(["scpsl database rework bot", "made bt hanbin#0939", "SCP : Secreat Laboratory"])
 
 @bot.event
 async def on_ready():
     print("logined succesfully\n")
-    print(f"{len(bot.guilds)} server joined\n") 
-    change_status.start()
+    print(f"{len(bot.guilds)} server joined\n")
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="privete beta..."))
+    #change_status.start()
 
-@tasks.loop(seconds=5)    # n초마다 다음 메시지 출력
-async def change_status():
-    await bot.change_presence(activity=discord.Game(next(status)))
+#@tasks.loop(seconds=5)    # n초마다 다음 메시지 출력
+#async def change_status():
+#    await bot.change_presence(activity=discord.Game(next(status)))
 
 @bot.slash_command(name="weponary",guild_ids=[guild])
 @commands.has_role("BETA TESTING")
