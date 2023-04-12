@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
-
-
+from data.scp_data import skill_079,Button_173
+        
 
 class weapon(discord.ui.View):
         @discord.ui.button(label="com-15", style=discord.ButtonStyle.success)
@@ -254,5 +254,5 @@ class logicar_attachment(discord.ui.View):
         embed.add_field(name="무게",value="+2%")
         await interaction.response.edit_message(view=weapon())
 
-    
+
 
