@@ -3,7 +3,7 @@ import discord
 from discord import default_permissions
 from discord.ext import commands , tasks
 from discord.commands import Option
-from config.data import token_beta
+from config.data import token , token_beta
 from data.beta_data import weapon
 from data.scp_data import scp_classes
 from itertools import cycle

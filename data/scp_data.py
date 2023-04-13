@@ -105,3 +105,4 @@ class scp_classes(discord.ui.View):
         embed = discord.Embed(title="Scp096",description="hp:2000\nhs:600~1200\nwalk:3.64m/s\nangry:8m/s",color=0xEC2222)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/f/f2/Docile_096Render.png/90px-Docile_096Render.png")
         embed.set_author(name="scp classed",icon_url="https://hub.scpslgame.com/images/thumb/f/f2/096Plush.png/150px-096Plush.png")
+        await interaction.response.edit_message(embed=embed,view=scp096_skill())
