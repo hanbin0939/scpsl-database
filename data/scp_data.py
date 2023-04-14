@@ -59,39 +59,42 @@ class Button_173(discord.ui.View):
             embed = discord.Embed(title="웅덩이", description="이동속도 감소하는 진흑 생성", color=0xff0000)
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/a/a1/CATSPRINT.png/180px-CATSPRINT.png')
             await interaction.response.edit_message(embed=embed)
-        @discord.ui.button(label="목꺽기", style=discord.ButtonStyle.blurple)
+        @discord.ui.button(label="목꺽기", style=discord.ButtonStyle.red)
         async def skill_2(self, button: discord.ui.Button, interaction: discord.Interaction):
             embed = discord.Embed(title="목꺽기", description="공격키", color=0xff0000)
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/b/b7/Left_Click.png')
             await interaction.response.edit_message(embed=embed)
-        @discord.ui.button(label="순간이동", style=discord.ButtonStyle.blurple)
+        @discord.ui.button(label="순간이동", style=discord.ButtonStyle.red)
         async def skill_2(self, button: discord.ui.Button, interaction: discord.Interaction):
             embed = discord.Embed(title="순간이동", description="공격키", color=0xff0000)
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/a/a4/Right_Click.png')
             await interaction.response.edit_message(embed=embed)
-        @discord.ui.button(label="go home",style=discord.ButtonStyle.blurple)
+        @discord.ui.button(label="go home",style=discord.ButtonStyle.red)
         async def go_home(self, button: discord.ui.Button, interaction: discord.Interaction):
             await interaction.response.edit_message(view=scp_classes())
 
 class scp096_skill(discord.ui.View):
     @discord.ui.button(label="attack",style=discord.ButtonStyle.red)
     async def scp096_attack(self,button:discord.ui.Button, interaction:discord.Interaction):
-        embed = discord.Embed(title="try not to cry",description="Perform a swipe attack with left click that deals high damage to targets.",color="0xEC2222")
+        embed = discord.Embed(title="attack",description="Perform a swipe attack with left click that deals high damage to targets.",color=0xEC2222)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/9/99/096MeleeSprite.png")
         embed.add_field(name="damage:",value="85%")
-        await interaction.response.edit_message(embed=embed)
+        await interaction.response.edit_message(embed=embed,view=scp096_skill())
     @discord.ui.button(label="Scopophobia(폭주)",style=discord.ButtonStyle.red)
     async def scopophobia(self,button:discord.ui.Button, interaction:discord.Interaction):
-        embed = discord.Embed(title="Scopophobia",description="press [R] Enter enrage mode when looked or shot at. Rage time scales based on targets.",color="0xEC2222")
+        embed = discord.Embed(title="Scopophobia",description="press [R] Enter enrage mode when looked or shot at. Rage time scales based on targets.",color=0xEC2222)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/c/c1/096ShieldSprite.png")
         embed.add_field(name="damage:",value="oh f*ck")
-        await interaction.response.edit_message(embed=embed)
+        await interaction.response.edit_message(embed=embed,view=scp096_skill())
     @discord.ui.button(label="Charge",style=discord.ButtonStyle.red)
     async def charge(self,button:discord.ui.Button, interaction:discord.Interaction):
-        embed = discord.Embed(title="charge",description="Perform a charge attack with right click forcing open any gates you run into.",color="0xEC2222")
+        embed = discord.Embed(title="charge",description="Perform a charge attack with right click forcing open any gates you run into.",color=0xEC2222)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/b/b0/096ChargeSprite.png")
         embed.add_field(name="damage:",value="90%")
-        await interaction.response.edit_message(embed=embed)
+        await interaction.response.edit_message(embed=embed,view=scp096_skill())
+    @discord.ui.button(label="go home",style=discord.ButtonStyle.red)
+    async def go_home(self, button: discord.ui.Button, interaction: discord.Interaction):
+        await interaction.response.edit_message(view=scp_classes())
 
 
 class scp_classes(discord.ui.View):
