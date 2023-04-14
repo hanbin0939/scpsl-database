@@ -31,7 +31,7 @@ async def ping(ctx):
     await ctx.respond(view=weapon())
 
 @bot.slash_command(name='scp-item',description="this commands is public!")
-async def candy(ctx,
+async def scp_item(ctx,
             item:Option(str,"SCP list",choices=["scp500","scp207","scp244","scp268","scp2176","scp1576","scp1853"])):
     if item == "scp500":
         embed = discord.Embed(title='SCP500',url="https://en.scpslgame.com/index.php?title=SCP-500",description='만병통치약')
