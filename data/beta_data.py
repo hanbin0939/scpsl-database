@@ -1,6 +1,4 @@
 import discord
-from discord.ext import commands
-from data.scp_data import skill_079,Button_173
         
 
 class weapon(discord.ui.View):
@@ -30,7 +28,7 @@ class weapon(discord.ui.View):
         @discord.ui.button(label="corssvec", style=discord.ButtonStyle.success)
         async def crossvec(self, button: discord.ui.Button, interaction: discord.Interaction):
             embed = discord.Embed(title='Crossvec',url="https://en.scpslgame.com/index.php?title=Crossvec",description=str('구미호 병사의 표준 기관단총'),color=0x70C3FF)
-            embed.set_author(name='Lunae Defence',icon_url='https://hub.scpslgame.com/images/thumb/0/09/LunaeLogo.png/300px-LunaeLogo.png')
+            embed.set_author(name='Mobile Task Force',icon_url='https://hub.scpslgame.com/images/7/7d/MTFPrivateIcon.png')
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/f/f0/CrossvecIcon.png/375px-CrossvecIcon.png')
             embed.set_image(url='https://hub.scpslgame.com/images/0/09/Crossvec_Equip_Animation.gif')
             embed.set_footer(text='기본피해량=24\n최대피해량=약84',icon_url='https://hub.scpslgame.com/images/thumb/4/46/Icon9x19mm.png/53px-Icon9x19mm.png')
@@ -39,7 +37,7 @@ class weapon(discord.ui.View):
         @discord.ui.button(label="ebsillon-11-SR",style=discord.ButtonStyle.success)
         async def ebsillon(self, button: discord.ui.Button, interaction: discord.Interaction):
             embed = discord.Embed(title='MTF-E11-SR',url="https://en.scpslgame.com/index.php?title=MTF-E11-SR",description='구미호 표준 장비',color=0x1700ff)
-            embed.set_author(name='Lunae Defence',icon_url='https://hub.scpslgame.com/images/thumb/0/09/LunaeLogo.png/300px-LunaeLogo.png')
+            embed.set_author(name='Mobile Task Force',icon_url='https://hub.scpslgame.com/images/2/2d/MTFSergeantIcon.png')
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/9/96/E11SRIcon.png/375px-E11SRIcon.png')
             embed.set_image(url='https://hub.scpslgame.com/images/2/23/E-11_Inspect_Animation.gif')
             await interaction.response.edit_message(embed=embed,view=e_11_attachment())
@@ -54,6 +52,7 @@ class weapon(discord.ui.View):
         @discord.ui.button(label="logicer",style=discord.ButtonStyle.success)
         async def ak(self, button:discord.ui.Button, interaction: discord.Integration):
             embed = discord.Embed(title="logicer",description="혼돈의 반란 기관총",color=0x0D7D35)
+            embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/d4/LogicerIcon.png/250px-LogicerIcon.png")
             embed.set_image(url="https://hub.scpslgame.com/images/2/23/Logicer_Inspect_New.gif")
             await interaction.response.edit_message(embed=embed,view=logicar_attachment())
@@ -61,11 +60,16 @@ class weapon(discord.ui.View):
         @discord.ui.button(label="shoutgun",style=discord.ButtonStyle.success)
         async def shoutgun(self, button:discord.ui.Button, interaction: discord.Integration):
             embed = discord.Embed(title="shoutgun",description="혼돈의 반란의 산탄총",color=0x006826)
-            embed.set_author(name="chaous insergency",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/120px-ChaosIcon.png",url="https://en.scpslgame.com/index.php?title=Chaos_Insurgent#Marauder%20")
+            embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/120px-ChaosIcon.png",url="https://en.scpslgame.com/index.php?title=Chaos_Insurgent#Marauder%20")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/e/ee/ShotgunIcon.png/375px-ShotgunIcon.png")
             embed.set_image(url="https://hub.scpslgame.com/images/1/17/Shotgun_Inspect_New.gif")
             await interaction.response.edit_message(embed=embed,view=shoutgun_attachment())
-
+        @discord.ui.button(label="revolver",style=discord.ButtonStyle.success)
+        async def revolver(self, button:discord.ui.Button, interaction: discord.Integration):
+            embed = discord.Embed(title="Revolver",description="S&W 500",color=0x006826)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/b5/RevolverIcon.png/375px-RevolverIcon.png")
+            embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/120px-ChaosIcon.png",url="https://en.scpslgame.com/index.php?title=Chaos_Insurgent#Marauder%20")
+            await interaction.response.edit_message(embed=embed,view=weapon())
 
 
 class shoutgun_attachment(discord.ui.View):
@@ -304,6 +308,8 @@ class e_11_attachment(discord.ui.View):
         embed.add_field(name="지향사격 정확도:",value="-26%")
         embed.add_field(name="길이",value="+20%")
         embed.add_field(name="무게",value="+46%")
+        await interaction.response.edit_message(embed=embed,view=e_11_attachment())
+
 class logicar_attachment(discord.ui.View):
     @discord.ui.button(label="Go home",style=discord.ButtonStyle.gray)
     async def go_home(self,button: discord.ui.Button, interaction: discord.Interaction):
@@ -332,4 +338,15 @@ class logicar_attachment(discord.ui.View):
         embed.add_field(name="총소리",value="+20%")
         embed.add_field(name="길이",value="+7%")
         embed.add_field(name="무게",value="+3%")
+        await interaction.response.edit_message(embed=embed,view=logicar_attachment())
+    @discord.ui.button(label="light barrel",style=discord.ButtonStyle.green)
+    async def short_barel(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="short barrel",description="기동성과 명중률을 늘려줍니다!",color=0x0D7D35)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/1/11/LogicerShortBarrel.png/90px-LogicerShortBarrel.png")
+        embed.add_field(name="Equip Time",value="-0.35/s")
+        embed.add_field(name="지향사격 정확도",value="+43%")
+        embed.add_field(name="길이",value="-10%")
+        embed.add_field(name="무게",value="-10")
+        embed.add_field(name="데미지",value="-5%")
+        embed.add_field(name="관통력",value="-5")
         await interaction.response.edit_message(embed=embed,view=logicar_attachment())

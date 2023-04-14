@@ -881,7 +881,7 @@ async def mtfc(ctx):
 async def ping(ctx):
     embed = discord.Embed(title="MTF Private",description="구미호 병사",color=0x70C3FF)
     embed.set_author(name="Military class",icon_url="https://hub.scpslgame.com/images/0/0a/Private_Keycard.png")
-    embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/1/19/MTFCaptainIcon.png/180px-MTFCaptainIcon.png")
+    embed.set_thumbnail(url="https://hub.scpslgame.com/images/7/7d/MTFPrivateIcon.png")
     file = discord.File("mtf_p.jpg",filename="image.png")
     embed.set_image(url="attachment://image.png")
     await ctx.respond(embed = embed , file=file)

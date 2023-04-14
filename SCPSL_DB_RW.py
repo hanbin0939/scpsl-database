@@ -79,7 +79,7 @@ async def scp_item(ctx,
         embed = discord.Embed(title="SCP1576",description="마법의 소라고동",url="https://en.scpslgame.com/index.php?title=SCP-1576")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/24/SCP1576Icon.png/200px-SCP1576Icon.png")
         embed.set_footer(text="이 아이탬을 사용시 30초간 죽은 사람과 대화를 할수 있습니다.")
-        embed.set_footer(text="회득 방법 : SCP item locker")
+        embed.set_footer(text="획득 방법 : SCP item locker")
         await ctx.respond(embed=embed)
 
     if item == "scp1853":
