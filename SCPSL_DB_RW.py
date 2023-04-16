@@ -4,8 +4,8 @@ from discord import default_permissions
 from discord.ext import commands , tasks
 from discord.commands import Option
 from config.data import token , token_beta
-from data.beta_data import weapon
-from data.scp_data import scp_classes
+from data.weaponary import weapon
+from data.scp import scp_classes
 from itertools import cycle
 guild = 1069174895893827604
 intents=discord.Intents.all()

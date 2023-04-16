@@ -1,46 +1,45 @@
 import discord
 
 class skill_079(discord.ui.View):
-    @discord.ui.button(label="Open/Close Doors (Active)", style=discord.ButtonStyle.grey)
+    @discord.ui.button(label="go home",style=discord.ButtonStyle.green)
+    async def go_home(self, button: discord.ui.Button, interaction: discord.Interaction):
+        await interaction.response.edit_message(view=scp_classes())
+
+    @discord.ui.button(label="Open/Close Doors (Active)", style=discord.ButtonStyle.red)
     async def skill_1(self, button: discord.ui.Button, interaction: discord.Interaction):
         embed=discord.Embed(title="open or close the door",color=0x8080FF)
+        embed.set_author(name="SCP079",icon_url="https://hub.scpslgame.com/images/thumb/2/20/LCZ_CCTV.png/315px-LCZ_CCTV.png",url="https://en.scpslgame.com/index.php?title=SCP-079")
         embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/6/64/682CCDoorIcon.png/75px-682CCDoorIcon.png')
-        await interaction.response.edit_message(embed=embed)
+        await interaction.response.edit_message(embed=embed,view=skill_079())
 
-    @discord.ui.button(label="Lockdown (Active)", style=discord.ButtonStyle.grey)
+    @discord.ui.button(label="Lockdown (Active)", style=discord.ButtonStyle.red)
     async def skill_2(self, button: discord.ui.Button, interaction: discord.Interaction):
         embed=discord.Embed(title="Lockdown (Active)",description="Lockdown a room and turn off its lights, allowing SCP-173 to move freely.",color=0x8080FF)
+        embed.set_author(name="SCP079",icon_url="https://hub.scpslgame.com/images/thumb/4/41/HCZ_CCTV.png/315px-HCZ_CCTV.png",url="https://en.scpslgame.com/index.php?title=SCP-079")
         embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/957968823703719958/1032072439527645254/unknown.png')
-        await interaction.response.edit_message(embed=embed)
+        await interaction.response.edit_message(embed=embed,view=skill_079())
 
-    @discord.ui.button(label="Tesla Overcharge (Active)", style=discord.ButtonStyle.blurple)
+    @discord.ui.button(label="Tesla Overcharge (Active)", style=discord.ButtonStyle.red)
     async def skill_3(self, button: discord.ui.Button, interaction: discord.Interaction):
         embed=discord.Embed(title="Tesla Overcharge (Active)",description="Activate Tesla Gates on anyone who walks through.",color=0x8080FF)
+        embed.set_author(name="SCP079",icon_url="https://hub.scpslgame.com/images/thumb/c/c1/EZ_CCTV.png/315px-EZ_CCTV.png",url="https://en.scpslgame.com/index.php?title=SCP-079")
         embed.set_thumbnail(url='https://hub.scpslgame.com/images/e/e4/079tesla2.png')
-        await interaction.response.edit_message(embed=embed)
+        await interaction.response.edit_message(embed=embed,view=skill_079())                 
                         
-                        
-    @discord.ui.button(label="Zone Blackout", style=discord.ButtonStyle.success)
+    @discord.ui.button(label="Zone Blackout", style=discord.ButtonStyle.red)
     async def skill_4(self, button: discord.ui.Button, interaction: discord.Interaction):
         embed=discord.Embed(title="Zone Blackout",description="At tire5 079 can black out the one zone to uses 200AP 60sec and cooldown 90sec",color=0x8080FF)
+        embed.set_author(name="SCP079",icon_url="https://hub.scpslgame.com/images/thumb/c/c1/EZ_CCTV.png/315px-EZ_CCTV.png",url="https://en.scpslgame.com/index.php?title=SCP-079")
         embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/7/74/ChaosCarIsLowOnGas.png/75px-ChaosCarIsLowOnGas.png')
-        await interaction.response.edit_message(embed=embed)
-                        
-      
-    @discord.ui.button(label="Target Counter", style=discord.ButtonStyle.red)
-    async def skill_5(self, button: discord.ui.Button, interaction: discord.Interaction):
-        embed=discord.Embed(title="Analysis in Progress. ETA: Unknown.",description="ATTENTION! This feature has yet to be added to the beta.",color=0xEC2222)
-        embed.set_thumbnail(url='https://hub.scpslgame.com/images/d/db/079Death.gif')
-        await interaction.response.edit_message(embed=embed)
+        await interaction.response.edit_message(embed=embed,view=skill_079())
                         
     @discord.ui.button(label="Breach Scanner", style=discord.ButtonStyle.red)
     async def skill_6(self, button: discord.ui.Button, interaction: discord.Interaction):
-        embed=discord.Embed(title="작업 진행중... ETA: Unknown.",description="주목! 이기능은 아직 추가되지 않았습니다..",color=0xEC2222)
-        embed.set_thumbnail(url='https://hub.scpslgame.com/images/d/db/079Death.gif')
-        embed2 = discord.Embed(title="new data detected",description="새로운 자료가 제시되었습니다",url="https://twitter.com/scpslofficial/status/1629936604059156480")
-        await interaction.response.edit_message(embeds=[embed,embed2])
+        embed=discord.Embed(title="Breach scanner",description="기능:일정시간마다 생존자를 스캔",color=0xEC2222)
+        embed.set_author(name="SCP079",icon_url="https://hub.scpslgame.com/images/thumb/2/20/LCZ_CCTV.png/315px-LCZ_CCTV.png",url="https://en.scpslgame.com/index.php?title=SCP-079")
+        await interaction.response.edit_message(embed=embed,view=skill_079())
                         
-    @discord.ui.button(label="Alpha Warhead Control", style=discord.ButtonStyle.gray,disabled=True)
+    @discord.ui.button(label="Alpha Warhead Control", style=discord.ButtonStyle.red,disabled=True)
     async def skill_7(self, button: discord.ui.Button, interaction: discord.Interaction):
         embed=discord.Embed(title="alpha warhead overdrive",description="ATTENTION! This feature has yet to be added to the beta.",color=0xEC2222)
         embed.set_author(name="tear5",icon_url="https://hub.scpslgame.com/images/thumb/9/9a/SCPCAT_079.png/180px-SCPCAT_079.png")
@@ -102,21 +101,21 @@ class scp096_skill(discord.ui.View):
     @discord.ui.button(label="attack",style=discord.ButtonStyle.red)
     async def scp096_attack(self,button:discord.ui.Button, interaction:discord.Interaction):
         embed = discord.Embed(title="attack",description="Perform a swipe attack with left click that deals high damage to targets.",color=0xEC2222)
-        embed.set_author(name="scp096 skill",icon_url="https://hub.scpslgame.com/images/thumb/3/32/096_IconCAT.png/180px-096_IconCAT.png")
+        embed.set_author(name="scp096 skill",icon_url="https://hub.scpslgame.com/images/thumb/f/f2/096Plush.png/150px-096Plush.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/9/99/096MeleeSprite.png")
         embed.add_field(name="damage:",value="85%")
         await interaction.response.edit_message(embed=embed,view=scp096_skill())
     @discord.ui.button(label="Scopophobia(폭주)",style=discord.ButtonStyle.red)
     async def scopophobia(self,button:discord.ui.Button, interaction:discord.Interaction):
         embed = discord.Embed(title="Scopophobia",description="press [R] Enter enrage mode when looked or shot at. Rage time scales based on targets.",color=0xEC2222)
-        embed.set_author(name="scp096 skill",icon_url="https://hub.scpslgame.com/images/thumb/3/32/096_IconCAT.png/180px-096_IconCAT.png")
+        embed.set_author(name="scp096 skill",icon_url="https://hub.scpslgame.com/images/thumb/f/f2/096Plush.png/150px-096Plush.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/c/c1/096ShieldSprite.png")
         embed.add_field(name="damage:",value="oh f*ck")
         await interaction.response.edit_message(embed=embed,view=scp096_skill())
     @discord.ui.button(label="Charge",style=discord.ButtonStyle.red)
     async def charge(self,button:discord.ui.Button, interaction:discord.Interaction):
         embed = discord.Embed(title="charge",description="Perform a charge attack with right click forcing open any gates you run into.",color=0xEC2222)
-        embed.set_author(name="scp096 skill",icon_url="https://hub.scpslgame.com/images/thumb/3/32/096_IconCAT.png/180px-096_IconCAT.png")
+        embed.set_author(name="scp096 skill",icon_url="https://hub.scpslgame.com/images/thumb/f/f2/096Plush.png/150px-096Plush.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/b/b0/096ChargeSprite.png")
         embed.add_field(name="damage:",value="90%")
         await interaction.response.edit_message(embed=embed,view=scp096_skill())
@@ -181,3 +180,10 @@ class scp_classes(discord.ui.View):
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/8/8e/RenderSCP-049.png/353px-RenderSCP-049.png")
         embed.set_author(name="SCP classes",icon_url="https://hub.scpslgame.com/images/thumb/5/5b/049_Icon.png/180px-049_Icon.png")
         await interaction.response.edit_message(embed=embed,view=scp049_skill())
+    @discord.ui.button(label="SCP079",style=discord.ButtonStyle.red)
+    async def scp079(self,button:discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="SCP079",description="OLD AI",color=0xEC2222)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/44/RenderSCP-079.png/375px-RenderSCP-079.png")
+        embed.set_author(name="Scp class",icon_url="https://hub.scpslgame.com/images/thumb/9/9a/SCPCAT_079.png/120px-SCPCAT_079.png",url="https://en.scpslgame.com/index.php?title=SCPs")
+        await interaction.response.edit_message(embed=embed,view=skill_079())
+
