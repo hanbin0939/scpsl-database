@@ -124,6 +124,39 @@ class scp096_skill(discord.ui.View):
     async def go_home(self, button: discord.ui.Button, interaction: discord.Interaction):
         await interaction.response.edit_message(view=scp_classes())
 
+class scp049_skill(discord.ui.View):
+    @discord.ui.button(label="credit arrest",style=discord.ButtonStyle.red)
+    async def credit_arrest(self,button:discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="credit arrest",color=0xEC2222)
+        embed.set_author(name="SCP Skill",icon_url="https://hub.scpslgame.com/images/thumb/5/5b/049_Icon.png/180px-049_Icon.png")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/b/ba/049Attack.png")
+        embed.set_footer(text="공격당할시: 스태미나 소요양x3 + -8hp/s + 40damage ")
+        await interaction.response.edit_message(embed=embed,view=scp049_skill())
+    @discord.ui.button(label="Good Sense of the Doctor",style=discord.ButtonStyle.red)
+    async def gsd(self,button:discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="Good Sense of the Doctor",color=0xEC2222)
+        embed.set_author(name="SCP Skill",icon_url="https://hub.scpslgame.com/images/thumb/5/5b/049_Icon.png/180px-049_Icon.png")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/f/fb/049Sense.png")
+        embed.set_footer(text="해당 타겟을 선정하면 이동속도가 빨라집니다!!")
+        await interaction.response.edit_message(embed=embed,view=scp049_skill())
+    @discord.ui.button(label="Waste Not, Want Not",style=discord.ButtonStyle.red)
+    async def wson(self,button:discord.ui.Button, interaction: discord.Interaction):
+        embed.set_author(name="SCP Skill",icon_url="https://hub.scpslgame.com/images/thumb/b/be/049-2_Icon.png/180px-049-2_Icon.png")
+        embed = discord.Embed(title="Waste Not Or Not",description="당신의 선택입니다...좀비로 계속 하실겁니까..?",color=0xEC2222)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/d/d6/049Waste.png")
+        await interaction.response.edit_message(embed=embed,view=scp049_skill())
+    @discord.ui.button(label="The Doctor's Call",style=discord.ButtonStyle.red)
+    async def docor_call(self,button:discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="The Doctor's Call",description="scp049-2 한테 위치공유 + 근처의 있는049-2 한테 HS 제공")
+        embed.set_author(name="SCP Skill",icon_url="https://hub.scpslgame.com/images/thumb/b/be/049-2_Icon.png/180px-049-2_Icon.png")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/c/c8/049Call.png")
+        await interaction.response.edit_message(embed = embed,view=scp049_skill())
+    @discord.ui.button(label="go home",style=discord.ButtonStyle.red)
+    async def go_home(self,button:discord.ui.Button, interaction: discord.Interaction):
+        await interaction.response.edit_message(view=scp_classes())
+
+
+
 
 class scp_classes(discord.ui.View):
     @discord.ui.button(label="SCP-173", style=discord.ButtonStyle.red)
@@ -144,4 +177,7 @@ class scp_classes(discord.ui.View):
         await interaction.response.edit_message(embed=embed,view=scp939_skill())
     @discord.ui.button(label="SCP049",style=discord.ButtonStyle.red)
     async def scp049(self,button:discord.ui.Button, interaction: discord.Interaction):
-        embed = discord.Embed(title="SCP049",)
+        embed = discord.Embed(title="SCP049",description="HP:2000\nHS:200~500\nSpeed:3.9~5.4",color=0xEC2222)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/8/8e/RenderSCP-049.png/353px-RenderSCP-049.png")
+        embed.set_author(name="SCP classes",icon_url="https://hub.scpslgame.com/images/thumb/5/5b/049_Icon.png/180px-049_Icon.png")
+        await interaction.response.edit_message(embed=embed,view=scp049_skill())

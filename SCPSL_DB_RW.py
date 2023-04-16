@@ -63,7 +63,7 @@ async def scp_item(ctx,
         await ctx.respond(embed=embed)
 
     if item == "scp268":
-        embed = discord.Embed(title="SCP-268",color=0xFFD500)
+        embed = discord.Embed(title="SCP-268",description="빵모자",color=0xFFD500)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/e/e8/UpdatedSCP268Icon.png/375px-UpdatedSCP268Icon.png")
         embed.set_footer(text="상호작용이 없을경우 최대 15초동안 투명상태를 유지할수 있습니다!")
         await ctx.respond(embed=embed)
