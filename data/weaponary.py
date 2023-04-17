@@ -372,3 +372,24 @@ class logicar_attachment(discord.ui.View):
         embed = discord.Embed(title="수직손잡이",description="반동을 줄여줍니다",color=0x0D7D35)
         embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/df/LogicerForegrip.png/38px-LogicerForegrip.png")
+
+class special_weapon(discord.ui.View):
+    @discord.ui.button(label="3-X Particle Disruptor",style=discord.ButtonStyle.blurple)
+    async def particle_gun(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="3-X Particle Disruptor",description="탄약수용양:5\n데미지:250(HS 무시)\n획득방법 : SCP914",color=0x2b3a72)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/7/77/IconDisruptor.png/375px-IconDisruptor.png")
+        await interaction.response.edit_message(embed=embed,view=special_weapon())
+    @discord.ui.button(label="com-45",style=discord.ButtonStyle.blurple)
+    async def com_45(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="COM-45",description="자동권총",color=0x808080)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/d9/IconCom45.png/375px-IconCom45.png")
+        embed.add_field(name='발사속도',value="__3600__")
+        await interaction.response.edit_message(embed=embed,view=special_weapon())
+    @discord.ui.button(label="jailbird",style=discord.ButtonStyle.blurple)
+    async def jailbird(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="Jailbird",description="first melee weapon",color=0x2b3a72)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/8/87/JailbirdIcon.png/375px-JailbirdIcon.png")
+        embed.add_field(name="damage:",value="50",inline=False)
+        embed.add_field(name="damage(charged):",value="200",inline=False)
+        embed.add_field(name="damage(charged + zombie):",value="__800__",inline=False)
+        await interaction.response.edit_message(embed=embed,view=special_weapon())

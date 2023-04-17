@@ -4,7 +4,7 @@ from discord import default_permissions
 from discord.ext import commands , tasks
 from discord.commands import Option
 from config.data import token , token_beta
-from data.weaponary import weapon
+from data.weaponary import weapon , special_weapon
 from data.scp import scp_classes
 from itertools import cycle
 guild = 1069174895893827604
@@ -94,6 +94,10 @@ async def scp_item(ctx,
 @commands.has_role("BETA TESTING")
 async def scp_list(ctx):
     await ctx.respond(view=scp_classes())
+
+@bot.slash_command(name="special_weapon")
+async def special(ctx):
+    await ctx.respond(view=special_weapon())
 
 @scp_list.error
 async def error(ctx,error):
