@@ -180,6 +180,7 @@ class attachmant_corssvec(discord.ui.View):
     @discord.ui.button(label="홀로그램 조준경",style=discord.ButtonStyle.success)
     async def holo_crossvec(self,button: discord.ui.Button, interaction: discord.Interaction):
         embed = discord.Embed(title="홀로그램 사이트",color=0x70C3FF)
+        embed.set_author(name='Mobile Task Force',icon_url='https://hub.scpslgame.com/images/7/7d/MTFPrivateIcon.png')
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/b5/CrossvecHoloSight.png/80px-CrossvecHoloSight.png")
         embed.add_field(name="배율:",value="1.05x")
         embed.add_field(name="무게:",value="+17%")
@@ -187,6 +188,7 @@ class attachmant_corssvec(discord.ui.View):
     @discord.ui.button(label="야간 조준경",style=discord.ButtonStyle.success)
     async def nw_crossvec(self,button: discord.ui.Button, interaction: discord.Interaction):
         embed = discord.Embed(title="야간조준경",color=0x70C3FF)
+        embed.set_author(name='Mobile Task Force',icon_url='https://hub.scpslgame.com/images/7/7d/MTFPrivateIcon.png')
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/24/CrossvecNightVision.png/80px-CrossvecNightVision.png")
         embed.add_field(name="배율:",value="1.85x")
         embed.add_field(name="무게:",value="+17%")
@@ -197,6 +199,7 @@ class attachmant_corssvec(discord.ui.View):
     @discord.ui.button(label="헤비베럴",style=discord.ButtonStyle.success)
     async def heavy_barrel(self,button: discord.ui.Button, interaction: discord.Interaction):
         embed = discord.Embed(title="extented berrel",color=0x70C3FF)
+        embed.set_author(name='Mobile Task Force',icon_url='https://hub.scpslgame.com/images/7/7d/MTFPrivateIcon.png')
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/4b/CrossvecBarrelLong.png/150px-CrossvecBarrelLong.png")
         embed.add_field(name="데미지",value="+5%")
         embed.add_field(name="관통력",value="+10%")
@@ -223,6 +226,16 @@ class attachmant_corssvec(discord.ui.View):
         embed.add_field(name="준비시간",value="+0.32/s")
         embed.add_field(name="길이",value="+29%")
         embed.add_field(name="무게",value="+13%")
+        await interaction.response.edit_message(embed=embed,view=attachmant_corssvec())
+    
+    @discord.ui.button(label="30xAP",style=discord.ButtonStyle.success)
+    async def AP_mag(self,button: discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="30x AP MAG",description="관통력 을 **매우** 늘려줍니다",color=0x70C3FF)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/f/fc/30AP.png/75px-30AP.png")
+        embed.add_field(name="관통력",value="__+200%__")
+        embed.add_field(name="무게",value="-6%")
+        embed.add_field(name="데미지",value="-15%")
+        embed.add_field(name="탄약수용양",value="-10")
         await interaction.response.edit_message(embed=embed,view=attachmant_corssvec())
 
     @discord.ui.button(label="go home",style=discord.ButtonStyle.red)
@@ -317,6 +330,7 @@ class logicar_attachment(discord.ui.View):
     @discord.ui.button(label="Red dot",style=discord.ButtonStyle.success)
     async def lg_reddot(self,buttom: discord.ui.Button, interaction: discord.Integration):
         embed = discord.Embed(title="Red dot sight",color=0x0D7D35)
+        embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/41/LogicerDotSight.png/90px-LogicerDotSight.png")
         embed.add_field(name="배울",value="1.05x")
         embed.add_field(name="무게",value="+2%")
@@ -324,6 +338,7 @@ class logicar_attachment(discord.ui.View):
     @discord.ui.button(label="NV scope",style=discord.ButtonStyle.success)
     async def nv_scope(self,buttom: discord.ui.Button, interaction: discord.Integration):
         embed = discord.Embed(title="야간 조준경",description="3배율 야간 조준경",color=0x0D7D35)
+        embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/29/LogicerScopeNV.png/90px-LogicerScopeNV.png")
         embed.add_field(name="zoom",value="2.25x")
         embed.add_field(name="조준속도",value="-25%")
@@ -332,6 +347,7 @@ class logicar_attachment(discord.ui.View):
     @discord.ui.button(label="muzzle brake",style=discord.ButtonStyle.success)
     async def muzzle_brake(self,buttom: discord.ui.Button, interaction: discord.Integration):
         embed = discord.Embed(title="보정기",description="반동을 줄여줍니다.",color=0x0D7D35)
+        embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/1/1a/LogicerMuzzleBrake.png/110px-LogicerMuzzleBrake.png")
         embed.add_field(name="반동",value="-30%")
         embed.add_field(name="준비시간",value="+0.01/s")
@@ -342,6 +358,7 @@ class logicar_attachment(discord.ui.View):
     @discord.ui.button(label="light barrel",style=discord.ButtonStyle.green)
     async def short_barel(self,buttom: discord.ui.Button, interaction: discord.Integration):
         embed = discord.Embed(title="short barrel",description="기동성과 명중률을 늘려줍니다!",color=0x0D7D35)
+        embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/1/11/LogicerShortBarrel.png/90px-LogicerShortBarrel.png")
         embed.add_field(name="Equip Time",value="-0.35/s")
         embed.add_field(name="지향사격 정확도",value="+43%")
@@ -350,3 +367,8 @@ class logicar_attachment(discord.ui.View):
         embed.add_field(name="데미지",value="-5%")
         embed.add_field(name="관통력",value="-5")
         await interaction.response.edit_message(embed=embed,view=logicar_attachment())
+    @discord.ui.button(label="손잡이",style=discord.ButtonStyle.green)
+    async def grip(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="수직손잡이",description="반동을 줄여줍니다",color=0x0D7D35)
+        embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/df/LogicerForegrip.png/38px-LogicerForegrip.png")
