@@ -186,4 +186,12 @@ class scp_classes(discord.ui.View):
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/44/RenderSCP-079.png/375px-RenderSCP-079.png")
         embed.set_author(name="Scp class",icon_url="https://hub.scpslgame.com/images/thumb/9/9a/SCPCAT_079.png/120px-SCPCAT_079.png",url="https://en.scpslgame.com/index.php?title=SCPs")
         await interaction.response.edit_message(embed=embed,view=skill_079())
+    @discord.ui.button(label="SCP106",style=discord.ButtonStyle.red)
+    async def scp106(self,button:discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="SCP106",description="HP:2000\nHS:300~900\nspeed:4.5~7m/s",color=0xEC2222)
+        embed.set_author(name="SCP classes",icon_url="https://hub.scpslgame.com/images/thumb/a/a2/106_Icon.png/180px-106_Icon.png",url="https://en.scpslgame.com/index.php?title=SCPs")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/8/8e/RenderSCP-106.png/450px-RenderSCP-106.png")
+        await interaction.response.edit_message(embed=embed,view=scp_classes())
+
+        
 

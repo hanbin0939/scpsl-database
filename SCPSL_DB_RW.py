@@ -11,7 +11,7 @@ guild = 1069174895893827604
 intents=discord.Intents.all()
 intents.message_content = True
 intents.members = True
-bot = commands.Bot(command_prefix='R!', intents=discord.Intents.all(),owner_ids=[759072684461391893,1042790192307781642,842224641871577088])
+bot = commands.Bot(command_prefix='!', intents=discord.Intents.all(),owner_ids=[759072684461391893,1042790192307781642,842224641871577088])
 #status = cycle(["scpsl database rework bot", "made bt hanbin#0939", "SCP : Secreat Laboratory"])
 
 @bot.event
@@ -110,6 +110,5 @@ async def add_beta_testing(ctx):
     user = ctx.author
     await user.add_roles(role)
     await ctx.respond("이제 베타 태스팅에 참여할수 있습니다!")
-
 
 bot.run(token_beta)
