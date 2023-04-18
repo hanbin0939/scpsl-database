@@ -7,6 +7,7 @@ from config.data import token , token_beta
 from data.weaponary import weapon , special_weapon
 from data.scp import scp_classes
 from itertools import cycle
+from data.music_file import SL_music , Parabellum , SCPSL_retro , The_Final_Flash , The_wating_game
 guild = 1069174895893827604
 intents=discord.Intents.all()
 intents.message_content = True
@@ -114,5 +115,21 @@ async def add_beta_testing(ctx):
     user = ctx.author
     await user.add_roles(role)
     await ctx.respond("이제 베타 태스팅에 참여할수 있습니다!")
+
+@bot.slash_command(name="scpsl_ost")
+async def scpsl_ost(ctx):
+    await ctx.respond(view=SL_music())
+
+@bot.slash_command(name='scpsl-theme',description="choose scpsl ost")
+async def scp_item(ctx,
+            ost:Option(str,"SCP list",choices=["parabllum","The Final Flash of Existence(oc)","SCPSL_retro","The_wating_game","scp2176","scp1576","scp1853"])):
+    if ost == "parabllum":
+        await ctx.respond(file=Parabellum)
+    if ost == "The Final Flash of Existence(oc)":
+        await ctx.respond(file=The_Final_Flash)
+    if ost == "SCPSL_retro":
+        await ctx.respond(file=SCPSL_retro)
+    if ost == "The_wating_game":
+        await ctx.respond(file=The_wating_game)
 
 bot.run(token_beta)
