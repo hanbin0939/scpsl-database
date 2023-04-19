@@ -322,6 +322,23 @@ class e_11_attachment(discord.ui.View):
         embed.add_field(name="길이",value="+20%")
         embed.add_field(name="무게",value="+46%")
         await interaction.response.edit_message(embed=embed,view=e_11_attachment())
+    @discord.ui.button(label="muzzle brake",style=discord.ButtonStyle.green)
+    async def muzzle_booster(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="muzzle Booster",description="발사속도를 높여주는대신 정확도가 낮아집니다.",color=0x1700ff)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/0/00/MuzzleBoosterE11.png/90px-MuzzleBoosterE11.png")
+        embed.add_field(name="발사속도",value=str("```diff\n+10%"))
+        embed.add_field(name="준비시간",value="+0.04/s")
+        embed.add_field(name="반동",value="+30%")
+        embed.add_field(name="총알정확도",value=str("```diff\n-17%"))
+        embed.add_field(name="길이",value="+1%")
+        embed.add_field(name="무게",value="+2%")
+        await interaction.response.edit_message(embed=embed,view=e_11_attachment())
+
+
+
+
+
+
 
 class logicar_attachment(discord.ui.View):
     @discord.ui.button(label="Go home",style=discord.ButtonStyle.gray)

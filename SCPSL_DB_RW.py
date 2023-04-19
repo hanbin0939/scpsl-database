@@ -2,12 +2,14 @@
 import discord
 from discord import default_permissions
 from discord.ext import commands , tasks
+from discord.ui import Select,View
 from discord.commands import Option
 from config.data import token , token_beta
 from data.weaponary import weapon , special_weapon
 from data.scp import scp_classes
 from itertools import cycle
 from data.music_file import SL_music , Parabellum , SCPSL_retro , The_Final_Flash , The_wating_game
+from data.human import MyView
 guild = 1069174895893827604
 intents=discord.Intents.all()
 intents.message_content = True
@@ -19,7 +21,7 @@ bot = commands.Bot(command_prefix='!', intents=discord.Intents.all(),owner_ids=[
 async def on_ready():
     print("logined succesfully\n")
     print(f"{len(bot.guilds)} server joined\n")
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="private beta..."))
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="public beta..."))
     #change_status.start()
 
 #@tasks.loop(seconds=5)    # n초마다 다음 메시지 출력
@@ -27,13 +29,13 @@ async def on_ready():
 #    await bot.change_presence(activity=discord.Game(next(status)))
 
 @bot.slash_command(name="weponary")
-@commands.has_role("BETA TESTING")
+#@commands.has_role("BETA TESTING")
 async def ping(ctx):
     await ctx.respond(view=weapon())
 
 @bot.slash_command(name='scp-item',description="this commands is public!")
 async def scp_item(ctx,
-            item:Option(str,"SCP list",choices=["scp500","scp207","scp244","scp268","scp2176","scp1576","scp1853"])):
+            item:Option(str,"SCP list",choices=["scp500","scp207","scp244","scp268","scp2176","scp1576","scp1853" , "anti-207"])):
     if item == "scp500":
         embed = discord.Embed(title='SCP500',url="https://en.scpslgame.com/index.php?title=SCP-500",description='만병통치약')
         embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/a/ac/SCP500Icon.png/180px-SCP500Icon.png')
@@ -90,9 +92,13 @@ async def scp_item(ctx,
         embed.set_image(url='https://hub.scpslgame.com/images/8/88/1853_Use_Animation.gif')
         embed.set_footer(text='상호작용 속도 +60%.\n조준속도 +30%\n[25%] 반동감소\n[25%] 재장전 시간\nEntering/Exiting ADS is faster by 20%.\n20% reducation in draw & usage time for certain items')
         await ctx.respond(embed=embed)
-        
+    if item == "anti-207":
+        embed = discord.Embed(title="Anti SCP207")
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/912017883788357662/1098038788439154769/SCP207Icon_1.png")
+        embed.set_footer(text="이동속도를 늘리는 대신 hp 회복\nSCP 207 + Anti SCP207 = ||*Pink Candy*||")
+                
 @bot.slash_command(name="scp_class")
-@commands.has_role("BETA TESTING")
+#@commands.has_role("BETA TESTING")
 async def scp_list(ctx):
     await ctx.respond(view=scp_classes())
 
@@ -131,5 +137,9 @@ async def scp_item(ctx,
         await ctx.respond(file=SCPSL_retro)
     if ost == "The_wating_game":
         await ctx.respond(file=The_wating_game)
+
+@bot.slash_command()
+async def class_human(ctx):
+    await ctx.respond("Choose a class!", view=MyView())
 
 bot.run(token_beta)
