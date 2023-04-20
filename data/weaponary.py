@@ -334,12 +334,6 @@ class e_11_attachment(discord.ui.View):
         embed.add_field(name="무게",value="+2%")
         await interaction.response.edit_message(embed=embed,view=e_11_attachment())
 
-
-
-
-
-
-
 class logicar_attachment(discord.ui.View):
     @discord.ui.button(label="Go home",style=discord.ButtonStyle.gray)
     async def go_home(self,button: discord.ui.Button, interaction: discord.Interaction):
@@ -389,6 +383,16 @@ class logicar_attachment(discord.ui.View):
         embed = discord.Embed(title="수직손잡이",description="반동을 줄여줍니다",color=0x0D7D35)
         embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/df/LogicerForegrip.png/38px-LogicerForegrip.png")
+        await interaction.response.edit_message(embed=embed,view=logicar_attachment())
+
+    @discord.ui.button(label="레이저 사이트",style=discord.ButtonStyle.green)
+    async def lazer(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="lazer",description="지향사격 정확도를 높혀줍니다.",color=0x0D7D35)
+        embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/48/LogicerLaser.png/120px-LogicerLaser.png")
+        embed.add_field(name="지향사격 정확도",value=str("```diff\n+67%```"))
+        embed.add_field(name="weight",value="+2%")
+        await interaction.response.edit_message(embed=embed,view=logicar_attachment())
 
 class special_weapon(discord.ui.View):
     @discord.ui.button(label="3-X Particle Disruptor",style=discord.ButtonStyle.blurple)
@@ -409,4 +413,12 @@ class special_weapon(discord.ui.View):
         embed.add_field(name="damage:",value="50",inline=False)
         embed.add_field(name="damage(charged):",value="200",inline=False)
         embed.add_field(name="damage(charged + zombie):",value="__800__",inline=False)
+        await interaction.response.edit_message(embed=embed,view=special_weapon())
+    @discord.ui.button(label="Micro H.I.D",style=discord.ButtonStyle.blurple)
+    async def micro_hid(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="Micro H.I.D",description="Biggest cannon",color=0x0096FF)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/d1/UpdatedMicroHIDIcon.png/375px-UpdatedMicroHIDIcon.png")
+        embed.add_field(name="blast damage",value="```90~1150```")
+        embed.add_field(name="fire delay",value="2s")
+        embed.set_footer(text="[left click] to blast [right click] to hold")
         await interaction.response.edit_message(embed=embed,view=special_weapon())

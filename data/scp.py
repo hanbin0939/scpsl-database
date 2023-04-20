@@ -154,7 +154,7 @@ class scp049_skill(discord.ui.View):
     async def go_home(self,button:discord.ui.Button, interaction: discord.Interaction):
         await interaction.response.edit_message(view=scp_classes())
 
-class scp106_skill(discord.ui.view):
+class scp106_skill(discord.ui.View):
     @discord.ui.button(label="stalk",style=discord.ButtonStyle.red)
     async def stalk(self,button:discord.ui.Button, interaction: discord.Interaction):
         embed = discord.Embed(title="STALK",description="I'm F*cking incilable!!!\n(sundowner)",color=0xEC2222)
@@ -199,7 +199,7 @@ class scp_classes(discord.ui.View):
         embed = discord.Embed(title="SCP106",description="HP:2000\nHS:300~900\nspeed:4.5~7m/s",color=0xEC2222)
         embed.set_author(name="SCP classes",icon_url="https://hub.scpslgame.com/images/thumb/a/a2/106_Icon.png/180px-106_Icon.png",url="https://en.scpslgame.com/index.php?title=SCPs")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/8/8e/RenderSCP-106.png/450px-RenderSCP-106.png")
-        await interaction.response.edit_message(embed=embed,view=scp_classes())
+        await interaction.response.edit_message(embed=embed,view=scp106_skill())
 
         
 

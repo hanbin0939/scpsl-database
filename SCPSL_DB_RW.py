@@ -2,7 +2,6 @@
 import discord
 from discord import default_permissions
 from discord.ext import commands , tasks
-from discord.ui import Select,View
 from discord.commands import Option
 from config.data import token , token_beta
 from data.weaponary import weapon , special_weapon
@@ -10,6 +9,8 @@ from data.scp import scp_classes
 from itertools import cycle
 from data.music_file import SL_music , Parabellum , SCPSL_retro , The_Final_Flash , The_wating_game
 from data.human import MyView
+from data.item import itemlist
+from data.scp_item import scp_items
 guild = 1069174895893827604
 intents=discord.Intents.all()
 intents.message_content = True
@@ -21,18 +22,21 @@ bot = commands.Bot(command_prefix='!', intents=discord.Intents.all(),owner_ids=[
 async def on_ready():
     print("logined succesfully\n")
     print(f"{len(bot.guilds)} server joined\n")
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="public beta..."))
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="public beta"))
     #change_status.start()
 
 #@tasks.loop(seconds=5)    # n초마다 다음 메시지 출력
 #async def change_status():
 #    await bot.change_presence(activity=discord.Game(next(status)))
-
+@bot.slash_command()
+async def scp_item(ctx):
+    await ctx.respond(view=scp_items())
+    
 @bot.slash_command(name="weponary")
 #@commands.has_role("BETA TESTING")
 async def ping(ctx):
     await ctx.respond(view=weapon())
-
+'''
 @bot.slash_command(name='scp-item',description="this commands is public!")
 async def scp_item(ctx,
             item:Option(str,"SCP list",choices=["scp500","scp207","scp244","scp268","scp2176","scp1576","scp1853" , "anti-207"])):
@@ -60,8 +64,8 @@ async def scp_item(ctx,
         embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/3/30/SCP244BIcon.png/300px-SCP244BIcon.png')
         embed.set_image(url='https://hub.scpslgame.com/images/7/7e/244B_Equip_Animation.gif')
         embed.set_footer(text='SCP item',icon_url='https://hub.scpslgame.com/images/thumb/3/32/SCP244AIcon.png/300px-SCP244AIcon.png')
-        embed.add_field(name="SCP-049-2",value='''**공격속도 쿨다운 + 2** & 공격속도 감소 & 스팩 감소''',inline=True)
-        embed.add_field(name="SCP-096",value='''얼굴 못봄 & **공격속도 감소**''',inline=True)
+        embed.add_field(name="SCP-049-2",value=공격속도 쿨다운 + 2** & 공격속도 감소 & 스팩 감소,inline=True)
+        embed.add_field(name="SCP-096",inline=True)
         embed.add_field(name="SCP-106",value="""공격 쿨다온 속도 증가""",inline=True)
         await ctx.respond(embed=embed)
 
@@ -96,7 +100,7 @@ async def scp_item(ctx,
         embed = discord.Embed(title="Anti SCP207")
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/912017883788357662/1098038788439154769/SCP207Icon_1.png")
         embed.set_footer(text="이동속도를 늘리는 대신 hp 회복\nSCP 207 + Anti SCP207 = ||*Pink Candy*||")
-                
+'''
 @bot.slash_command(name="scp_class")
 #@commands.has_role("BETA TESTING")
 async def scp_list(ctx):
@@ -141,5 +145,8 @@ async def scp_item(ctx,
 @bot.slash_command()
 async def class_human(ctx):
     await ctx.respond("Choose a class!", view=MyView())
+@bot.slash_command()
+async def itemlist(ctx):
+    await ctx.respond(view=itemlist())
 
 bot.run(token_beta)
