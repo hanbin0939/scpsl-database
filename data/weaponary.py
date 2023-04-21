@@ -1,5 +1,5 @@
 import discord
-        
+
 
 class weapon(discord.ui.View):
         @discord.ui.button(label="com-15", style=discord.ButtonStyle.success)
@@ -172,6 +172,13 @@ class attachmant_com_18(discord.ui.View):
         embed.set_footer(text='기본대미지=20\n최대대미지=70\n',icon_url=('https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png'))
         embed.set_author(name='weapon',icon_url=("https://hub.scpslgame.com/images/thumb/7/75/GuardIcon.png/180px-GuardIcon.png"))
         await interaction.response.edit_message(embed=embed,view=attachmant_com_18())
+    @discord.ui.button(label="old image",style=discord.ButtonStyle.blurple)
+    async def archive(self, button: discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="HK USP")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/6/6f/USP.png/375px-USP.png")
+        embed.set_author(name="weponary",icon_url="https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png")
+        await interaction.response.edit_message(embed=embed,view=weapon())
+
     @discord.ui.button(label='go home', style=discord.ButtonStyle.gray)
     async def go_home(self, button: discord.ui.Button, interaction: discord.Interaction):
         await interaction.response.edit_message(view=weapon())

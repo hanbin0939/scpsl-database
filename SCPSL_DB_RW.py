@@ -11,6 +11,7 @@ from data.music_file import SL_music , Parabellum , SCPSL_retro , The_Final_Flas
 from data.human import MyView
 from data.item import itemlist
 from data.scp_item import scp_items
+from data.url import SimpleView
 guild = 1069174895893827604
 intents=discord.Intents.all()
 intents.message_content = True
@@ -145,8 +146,13 @@ async def scp_item(ctx,
 @bot.slash_command()
 async def class_human(ctx):
     await ctx.respond("Choose a class!", view=MyView())
+
 @bot.slash_command()
 async def itemlist(ctx):
     await ctx.respond(view=itemlist())
+
+@bot.slash_command()
+async def youtuber(ctx):
+    await ctx.respond(view=SimpleView())
 
 bot.run(token_beta)
