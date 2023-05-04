@@ -43,18 +43,23 @@ class MyView(discord.ui.View):
                 emoji="🟢",
                 value="6",
                 description="Chaos Insurgency"
+            ),
+            discord.SelectOption(
+                label="Tutorial",
+                value="7",
+                description="Turorial"
             )
         ]
     )
     async def select_callback(self, select, interaction):
         if select.values[0] == "1":
-            embed = discord.Embed(title="D class personal",description="경계 : 시설 경비 or MTF\n중립 : 과학자\n아군 : 혼돈의반란",color=0xFF8E00)
+            embed = discord.Embed(title="D class personal",description="```ansi\n[2;30m[2;47m경계 : 시설경비[0m[2;30m[0m\n[0;30m[0m[2;30m\n[2;36m아군 : 혼돈의 반란[0m[2;30m[0m\n```",color=0xFF8E00)
             embed.set_author(name="civilion class",icon_url="https://hub.scpslgame.com/images/thumb/a/a0/ClassDIcon.png/180px-ClassDIcon.png")
             embed.add_field(name="item",value="None")
             await interaction.response.edit_message(embed=embed)
 
         if select.values[0] == "2":
-            embed = discord.Embed(title="Scientist",description="아군:mtf & 시설경비\n중립 : D계급인원\n",color=0xFFFF7C)
+            embed = discord.Embed(title="Scientist",description="```ansi\n[2;31m[0m[2;31m적 : 혼돈의 반란 & SCP[0m[2;33m[2;33m[0m[2;33m[0m\n[2;34m아군 : 기동특무부대[0m[0;2m[0m\n[2;32m중립 : D계급인원[0m[0;2m[0m\n```",color=0xFFFF7C)
             embed.set_author(name="civilion class",icon_url="https://hub.scpslgame.com/images/thumb/a/a9/ScientistIcon.png/180px-ScientistIcon.png")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/9/90/Scientist_%2812.0%29.png/653px-Scientist_%2812.0%29.png")
             await interaction.response.edit_message(embed=embed)
@@ -77,6 +82,7 @@ class MyView(discord.ui.View):
             await interaction.response.edit_message(embed=embed)
         
         if select.values[0] == "6":
-            embed = discord.Embed(title="Chaos Insurgent",color=0x0D7D35)
+            embed = discord.Embed(title="Chaos Insurgent",description="""```ansi\n[2;31m적 : [0m[2;34m제단 특무부대[0m\n[2;34m[2;32m아군 : D 계급 인원[0m[2;34m[0m\n[2;34m[2;32m[2;33m중립 : [2;31mSCP[0m[2;33m[2;31m[0m[2;33m[0m[2;32m[0m[2;34m[0m\n```""",color=0x0D7D35)
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/2a/Chaos_Insurgent_%2812.0%29.png/435px-Chaos_Insurgent_%2812.0%29.png")
             await interaction.response.edit_message(embed=embed)
+        

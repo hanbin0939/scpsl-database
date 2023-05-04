@@ -35,7 +35,7 @@ class skill_079(discord.ui.View):
                         
     @discord.ui.button(label="Breach Scanner", style=discord.ButtonStyle.red)
     async def skill_6(self, button: discord.ui.Button, interaction: discord.Interaction):
-        embed=discord.Embed(title="Breach scanner",description="기능:일정시간마다 생존자를 스캔",color=0xEC2222)
+        embed=discord.Embed(title="Breach scanner",description="기능:일정시간마다 생존자를 스캔",color=0x8080FF)
         embed.set_author(name="SCP079",icon_url="https://hub.scpslgame.com/images/thumb/2/20/LCZ_CCTV.png/315px-LCZ_CCTV.png",url="https://en.scpslgame.com/index.php?title=SCP-079")
         await interaction.response.edit_message(embed=embed,view=skill_079())
                         
@@ -158,6 +158,7 @@ class scp106_skill(discord.ui.View):
     @discord.ui.button(label="stalk",style=discord.ButtonStyle.red)
     async def stalk(self,button:discord.ui.Button, interaction: discord.Interaction):
         embed = discord.Embed(title="STALK",description="I'm F*cking incilable!!!\n(sundowner)",color=0xEC2222)
+        embed.set_author(name="SCP106 skill",icon_url="https://hub.scpslgame.com/images/thumb/a/a2/106_Icon.png/180px-106_Icon.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/8/88/Pocket_Dimension.png/400px-Pocket_Dimension.png")
         await interaction.response.edit_message(embed=embed,view=scp106_skill())
 

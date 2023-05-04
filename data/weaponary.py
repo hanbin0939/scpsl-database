@@ -47,10 +47,10 @@ class weapon(discord.ui.View):
             embed = discord.Embed(title="AK",description="혼돈의 반란 소충수의 표준무기",color=0x008F1C)
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/33/NewAKIcon.png/375px-NewAKIcon.png")
             embed.set_image(url="https://hub.scpslgame.com/images/thumb/2/2f/AK_Render_2.jpg/1353px-AK_Render_2.jpg")
-            await interaction.response.edit_message(embed=embed,view=weapon())
+            await interaction.response.edit_message(embed=embed,view=ak_Attachment())
 
         @discord.ui.button(label="logicer",style=discord.ButtonStyle.success)
-        async def ak(self, button:discord.ui.Button, interaction: discord.Integration):
+        async def lg(self, button:discord.ui.Button, interaction: discord.Integration):
             embed = discord.Embed(title="logicer",description="혼돈의 반란 기관총",color=0x0D7D35)
             embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/d4/LogicerIcon.png/250px-LogicerIcon.png")
@@ -282,7 +282,7 @@ class e_11_attachment(discord.ui.View):
 
     @discord.ui.button(label="손잡이",style=discord.ButtonStyle.success)
     async def grip_e_11(self, button: discord.ui.Button, interaction: discord.Interaction):
-        embed = discord.Embed(title="Foregrip",color=0x1700ff)
+        embed = discord.Embed(title="Foregrip",description="```ansi\n[2;34m반동을 줄여줍니다.[0m\n```",color=0x1700ff)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/c/c8/GripE11.png/60px-GripE11.png")
         embed.add_field(name="반동",value="-33.3")
         embed.add_field(name="조준속도",value="-15%")
@@ -291,7 +291,7 @@ class e_11_attachment(discord.ui.View):
     
     @discord.ui.button(label="Recoil-Reducing Stock	",style=discord.ButtonStyle.success)
     async def recoilstock_e_11(self, button: discord.ui.Button, interaction: discord.Interaction):
-        embed = discord.Embed(title="Recoil-Reducing Stock",color=0x1700ff)
+        embed = discord.Embed(title="Recoil-Reducing Stock",description="```ansi\n[2;34m조준사격반동을 줄여줍니다.[0m\n```",color=0x1700ff)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/36/ShockStock.png/150px-ShockStock.png")
         embed.add_field(name="조준사격반동",value="-33.3")
         embed.add_field(name="길이",value="-1%")
@@ -301,7 +301,7 @@ class e_11_attachment(discord.ui.View):
     
     @discord.ui.button(label="레이저 사이트",style=discord.ButtonStyle.success)
     async def lz_e_11(self, button: discord.ui.Button, interaction: discord.Interaction):
-        embed = discord.Embed(title="Laser Sight",color=0x1700ff)
+        embed = discord.Embed(title="Laser Sight",description="```ansi\n[2;34m지향사격 정확도를 [1;34m매우 [0m[2;34m높여줍니다[0m\n```",color=0x1700ff)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/a/ac/LaserE11.png/60px-LaserE11.png")
         embed.add_field(name="지향사격정확도",value="+100.0%")
         embed.add_field(name="weight",value="+11%")
@@ -309,7 +309,7 @@ class e_11_attachment(discord.ui.View):
 
     @discord.ui.button(label="rife body",style=discord.ButtonStyle.success)
     async def rife_body(self,buttom: discord.ui.Button, interaction: discord.Integration):
-        embed = discord.Embed(title="Rife body",description="조준사격 정확도를 늘려줍니다.",color=0x1700ff)
+        embed = discord.Embed(title="Rife body",description="```ansi\n[2;35m[2;34m조준사격 정확도를 높여줍니다.[0m[2;35m[0m\n```",color=0x1700ff)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/28/RifleBody.png/150px-RifleBody.png")
         embed.add_field(name="데미지:",value="+7.5%")
         embed.add_field(name="관통력:",value="+12.5%")
@@ -321,7 +321,7 @@ class e_11_attachment(discord.ui.View):
         await interaction.response.edit_message(embed=embed,view=e_11_attachment())
     @discord.ui.button(label="muzzle brake",style=discord.ButtonStyle.success)
     async def muzzle_brake(self,buttom: discord.ui.Button, interaction: discord.Integration):
-        embed = discord.Embed(title="muzzle brake",description="반동을 줄여줍니다.",color=0x1700ff)
+        embed = discord.Embed(title="muzzle brake",description="```ansi\n[2;36m[2;34m[1;34m[0;34m[0m[1;34m반동을 줄여줍니다.[0m[2;34m[0m[2;36m[0m\n```",color=0x1700ff)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/b3/MuzzleBrake_0.png/60px-MuzzleBrake_0.png")
         embed.add_field(name="반동:",value="-10%")
         embed.add_field(name="준비시간:",value="+0.13/s")
@@ -329,14 +329,14 @@ class e_11_attachment(discord.ui.View):
         embed.add_field(name="길이",value="+20%")
         embed.add_field(name="무게",value="+46%")
         await interaction.response.edit_message(embed=embed,view=e_11_attachment())
-    @discord.ui.button(label="muzzle brake",style=discord.ButtonStyle.green)
+    @discord.ui.button(label="muzzle booster",style=discord.ButtonStyle.green)
     async def muzzle_booster(self,buttom: discord.ui.Button, interaction: discord.Integration):
         embed = discord.Embed(title="muzzle Booster",description="발사속도를 높여주는대신 정확도가 낮아집니다.",color=0x1700ff)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/0/00/MuzzleBoosterE11.png/90px-MuzzleBoosterE11.png")
-        embed.add_field(name="발사속도",value=str("```diff\n+10%"))
+        embed.add_field(name="발사속도",value=str("````ansi\n[2;36m[2;34m[1;34m+ 10%[0m[2;34m[0m[2;36m[0m\n```"))
         embed.add_field(name="준비시간",value="+0.04/s")
         embed.add_field(name="반동",value="+30%")
-        embed.add_field(name="총알정확도",value=str("```diff\n-17%"))
+        embed.add_field(name="총알정확도",value=str("```ansi\n[2;36m[2;34m[1;34m[1;31m- 10%[0m[1;34m[0m[2;34m[0m[2;36m[0m\n```"))
         embed.add_field(name="길이",value="+1%")
         embed.add_field(name="무게",value="+2%")
         await interaction.response.edit_message(embed=embed,view=e_11_attachment())
@@ -350,8 +350,8 @@ class logicar_attachment(discord.ui.View):
         embed = discord.Embed(title="Red dot sight",color=0x0D7D35)
         embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/41/LogicerDotSight.png/90px-LogicerDotSight.png")
-        embed.add_field(name="배울",value="1.05x")
-        embed.add_field(name="무게",value="+2%")
+        embed.add_field(name="배울",value="```ansi\n[2;34m1.05x[0m\n```")
+        embed.add_field(name="무게",value="```ansi\n[2;31m[2;31m[0m[2;31m[0m[2;31m+2%[0m\n```")
         await interaction.response.edit_message(embed=embed,view=logicar_attachment())
     @discord.ui.button(label="NV scope",style=discord.ButtonStyle.success)
     async def nv_scope(self,buttom: discord.ui.Button, interaction: discord.Integration):
@@ -429,3 +429,22 @@ class special_weapon(discord.ui.View):
         embed.add_field(name="fire delay",value="2s")
         embed.set_footer(text="[left click] to blast [right click] to hold")
         await interaction.response.edit_message(embed=embed,view=special_weapon())
+
+class ak_Attachment(discord.ui.View):
+    @discord.ui.button(label="go back",style=discord.ButtonStyle.green)
+    async def go_back(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="AK",description="혼돈의 반란 소충수의 표준무기",color=0x008F1C)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/33/NewAKIcon.png/375px-NewAKIcon.png")
+        embed.set_image(url="https://hub.scpslgame.com/images/thumb/2/2f/AK_Render_2.jpg/1353px-AK_Render_2.jpg")
+        await interaction.response.edit_message(embed=embed,view=ak_Attachment())
+    @discord.ui.button(label="extended barrel",style=discord.ButtonStyle.green)
+    async def ex_barrel(self,buttom: discord.ui.Button, interaction: discord.Integration):
+        embed = discord.Embed(title="Extended barrel",description="총알 정확도랑 데미지를 높여줍니다.",color=0x008F1C)
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/33/NewAKIcon.png/375px-NewAKIcon.png")
+        embed.add_field(name="Penetration ",value="+10%")
+        embed.add_field(name="damage ",value="+5%")
+        embed.add_field(name="Equip Time ",value="+0.18s")
+        embed.add_field(name="Hip-Firing Accuracy ",value="-5%")
+        embed.add_field(name="length ",value="+17%")
+        embed.add_field(name="Weight ",value="+14%")
+        await interaction.response.edit_message(embed=embed,view=ak_Attachment())
