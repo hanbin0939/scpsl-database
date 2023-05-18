@@ -39,7 +39,7 @@ class skill_079(discord.ui.View):
         embed.set_author(name="SCP079",icon_url="https://hub.scpslgame.com/images/thumb/2/20/LCZ_CCTV.png/315px-LCZ_CCTV.png",url="https://en.scpslgame.com/index.php?title=SCP-079")
         await interaction.response.edit_message(embed=embed,view=skill_079())
                         
-    @discord.ui.button(label="Alpha Warhead Control", style=discord.ButtonStyle.red,disabled=True)
+    @discord.ui.button(label="Error", style=discord.ButtonStyle.red,disabled=True)
     async def skill_7(self, button: discord.ui.Button, interaction: discord.Interaction):
         embed=discord.Embed(title="alpha warhead overdrive",description="ATTENTION! This feature has yet to be added to the beta.",color=0xEC2222)
         embed.set_author(name="tear5",icon_url="https://hub.scpslgame.com/images/thumb/9/9a/SCPCAT_079.png/180px-SCPCAT_079.png")
@@ -64,13 +64,13 @@ class Button_173(discord.ui.View):
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/a/a1/CATSPRINT.png/180px-CATSPRINT.png')
             await interaction.response.edit_message(embed=embed)
         @discord.ui.button(label="목꺽기", style=discord.ButtonStyle.red)
-        async def skill_2(self, button: discord.ui.Button, interaction: discord.Interaction):
+        async def skill_3(self, button: discord.ui.Button, interaction: discord.Interaction):
             embed = discord.Embed(title="목꺽기", description="공격키", color=0xEC2222)
             embed.set_author(name="scp173 skill",icon_url="https://hub.scpslgame.com/images/thumb/0/0d/173_Icon_new.png/180px-173_Icon_new.png")
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/b/b7/Left_Click.png')
             await interaction.response.edit_message(embed=embed)
         @discord.ui.button(label="순간이동", style=discord.ButtonStyle.red)
-        async def skill_2(self, button: discord.ui.Button, interaction: discord.Interaction):
+        async def skill_4(self, button: discord.ui.Button, interaction: discord.Interaction):
             embed = discord.Embed(title="순간이동", description="공격키", color=0xEC2222)
             embed.set_author(name="scp173 skill",icon_url="https://hub.scpslgame.com/images/thumb/0/0d/173_Icon_new.png/180px-173_Icon_new.png")
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/a/a4/Right_Click.png')
@@ -96,6 +96,21 @@ class scp939_skill(discord.ui.View):
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/a/a4/939AmnesticIcon.png/900px-939AmnesticIcon.png")
         embed.set_footer(text="가스를 배출해 적군으로부터 자신을 숨깁니다.")
         await interaction.response.edit_message(embed=embed,view=scp939_skill())
+
+    @discord.ui.button(label="Ultrasensitive (Passive)",style=discord.ButtonStyle.red)
+    async def ultrasensive(self,button:discord.ui.Button, interaction:discord.Interaction):
+        embed = discord.Embed(title="Ultrasensitive (Passive)", description="적탐지", color=0xEC2222)
+        embed.set_author(name="scp939",icon_url="https://hub.scpslgame.com/images/thumb/3/35/939_Icon.png/180px-939_Icon.png")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/d/d3/939UltrasenseIcon.png")
+        embed.set_footer(text="상대방의 소리를 감지합니다.")
+        await interaction.response.edit_message(embed=embed, view=scp939_skill())
+
+    @discord.ui.button(label="Mimicry (Active)",style=discord.ButtonStyle.red)
+    async def minary(Self, button:discord.ui.Button, interaction:discord.Interaction):
+        embed = discord.Embed(title="Mimicry (Active)",description="목소리를 흉내냅니다.",color=0xEC2222)
+        embed.set_author(name="scp939",icon_url="https://hub.scpslgame.com/images/thumb/3/35/939_Icon.png/180px-939_Icon.png")
+        embed.set_thumbnail(url="https://hub.scpslgame.com/images/7/77/939MimicryIcon.png")
+        await interaction.response.edit_message(embed=embed, view=scp939_skill())
 
 class scp096_skill(discord.ui.View):
     @discord.ui.button(label="attack",style=discord.ButtonStyle.red)
@@ -136,10 +151,11 @@ class scp049_skill(discord.ui.View):
         embed = discord.Embed(title="Good Sense of the Doctor",color=0xEC2222)
         embed.set_author(name="SCP Skill",icon_url="https://hub.scpslgame.com/images/thumb/5/5b/049_Icon.png/180px-049_Icon.png")
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/f/fb/049Sense.png")
-        embed.set_footer(text="해당 타겟을 선정하면 이동속도가 빨라집니다!!")
+        embed.set_footer(text="해당 타겟을 선정 하면 이동속도가 빨라집니다!!")
         await interaction.response.edit_message(embed=embed,view=scp049_skill())
     @discord.ui.button(label="Waste Not, Want Not",style=discord.ButtonStyle.red)
     async def wson(self,button:discord.ui.Button, interaction: discord.Interaction):
+        embed = discord.Embed(title="Waste not or not", color=0xEC2222)
         embed.set_author(name="SCP Skill",icon_url="https://hub.scpslgame.com/images/thumb/b/be/049-2_Icon.png/180px-049-2_Icon.png")
         embed = discord.Embed(title="Waste Not Or Not",description="당신의 선택입니다...좀비로 계속 하실겁니까..?",color=0xEC2222)
         embed.set_thumbnail(url="https://hub.scpslgame.com/images/d/d6/049Waste.png")

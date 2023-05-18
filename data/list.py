@@ -2,7 +2,7 @@ import discord
 
 
 
-class MyView(discord.ui.View):
+class Class_list(discord.ui.View):
     @discord.ui.select( # the decorator that lets you specify the properties of the select menu
         placeholder = "Choose a Class!", # the placeholder text that will be displayed if nothing is selected
         min_values = 1, # the minimum number of values that must be selected by the users
@@ -31,24 +31,25 @@ class MyView(discord.ui.View):
                 emoji="🔵",
                 value= "4",
                 description="MObile Task Force Captain"
-            ),
-            discord.SelectOption(
-                label="MTF soldier",
-                emoji="🔵",
-                value="5",
-                description="Mobile Task Force soldier"
+            
             ),
             discord.SelectOption(
                 label="Chaos Insurgent",
                 emoji="🟢",
-                value="6",
+                value="5",
                 description="Chaos Insurgency"
             ),
             discord.SelectOption(
-                label="Tutorial",
+                label="SCP 173",
+                value="6",
+                description="SCP class"
+            ),
+            discord.SelectOption(
+                label="SCP 096",
                 value="7",
-                description="Turorial"
-            )
+                description="SCP class"
+            ),
+
         ]
     )
     async def select_callback(self, select, interaction):
@@ -77,12 +78,17 @@ class MyView(discord.ui.View):
             await interaction.response.edit_message(embed=embed)
 
         if select.values[0] == "5":
-            embed = discord.Embed(title="MTF soldier",description="적:혼돈의 반란 & SCP\n아군:과학자\n경계:D 계급인원",color=0x003DCA)
-            embed.set_thumbnail(url="https://hub.scpslgame.com/images/7/7d/MTFPrivateIcon.png")
-            await interaction.response.edit_message(embed=embed)
-        
-        if select.values[0] == "6":
             embed = discord.Embed(title="Chaos Insurgent",description="""```ansi\n[2;31m적 : [0m[2;34m제단 특무부대[0m\n[2;34m[2;32m아군 : D 계급 인원[0m[2;34m[0m\n[2;34m[2;32m[2;33m중립 : [2;31mSCP[0m[2;33m[2;31m[0m[2;33m[0m[2;32m[0m[2;34m[0m\n```""",color=0x0D7D35)
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/2a/Chaos_Insurgent_%2812.0%29.png/435px-Chaos_Insurgent_%2812.0%29.png")
             await interaction.response.edit_message(embed=embed)
         
+        if select.values[0] == "6":
+            embed = discord.Embed(title="SCP173",description="Hp:4000\nHS:750~1500\nspeed:7.3m/s",color=0xEC2222)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/1/15/RenderSCP-173.png/353px-RenderSCP-173.png")
+            await interaction.response.edit_message(embed=embed)
+        
+        if select.values[0] == "7":
+            embed = discord.Embed(title="Scp096",description="hp:2000\nhs:600~1200\nwalk:3.64m/s\nangry:8m/s",color=0xEC2222)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/f/f2/Docile_096Render.png/90px-Docile_096Render.png")
+            embed.set_author(name="scp classed",icon_url="https://hub.scpslgame.com/images/thumb/f/f2/096Plush.png/150px-096Plush.png")
+            await interaction.response.edit_message(embed=embed)
