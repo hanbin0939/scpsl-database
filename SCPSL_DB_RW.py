@@ -100,8 +100,26 @@ async def ad(ctx):
     await ctx.respond("현제 이기능은 WG 제단에만 지원합니다!",view=Server_Link())
 
 @bot.slash_command()
-@commands.is_owner
+@commands.is_owner()
 async def view(ctx):
     await ctx.respond("choose a class!",view=Class_list())
 
+@bot.slash_command(name="question_of_sl")
+async def eula(ctx,
+               question:Option(str,"Question",choices=["게임 핵 또는 치트키를 사용하면 어떻게됩니까??",
+                                                       "노스우드에 기밀사항을 유출하면 어떻게됩니까?",
+                                                       "서버내 공격 (디도스 사기 프로그램 등등) 을 하면 어떻게됩니까??",
+                                                       "다른 사람에 해가되는 플래이를 하면 어떻게됩니까??",
+                                                       "혹시 SCPSL 에 자체 유저 신고가 있어??"])):
+    if question == "다른 사람에 해가되는 플래이를 하면 어떻게됩니까??":
+        await ctx.respond("(1) 모욕적이거나 공격적인 언어 사용;\n(2)모욕적이거나 공격적인 언어 사용;\n(3) 파괴적이거나 유해한 방식으로 행동하는 행위\n(4) 공중도덕에 반하는 행동.\n일시 노스우드에 처벌을 받을수 있습니다.")
+    if question == "노스우드에 기밀사항을 유출하면 어떻게됩니까?":
+        await ctx.respond("정도에 따라 다르지만 노스우드에 경고 또는 자체밴을 먹을수 있습니다.")
+    if question == "게임 핵 또는 치트키를 사용하면 어떻게됩니까??":
+        await ctx.respond("안티-치트-시스탬이 감지되어 자동적으로 게임자체밴 처리됩니다.\n||만일 억울하다 생각하시면 appeal@scpslgame.com 으로 항소를 하시면 됩니다!||")
+    if question == "서버내 공격 (디도스 사기 프로그램 등등) 을 하면 어떻게됩니까??":
+        await ctx.respond("SCPSL 에서는 디도스 공격 , 사기 또는 악성코드를 **엄격히 금지하고 있습니다.**")
+    if question == "혹시 SCPSL 에 자체 유저 신고가 있어??":
+        await ctx.respond("```you can use @Polaris if you have access (/report) or you can email security@scpslgame.com with your evidence```")
+    
 bot.run(token_beta)
