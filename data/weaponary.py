@@ -1,4 +1,5 @@
 import discord
+from data_rework.weapon_rework import weapon_view
 
 
 class weapon(discord.ui.View):
