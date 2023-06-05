@@ -35,7 +35,7 @@ class weapon_view(discord.ui.View):
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/2/2e/IconCom18.png/250px-IconCom18.png')
             embed.set_footer(text='기본대미지=20\n최대대미지=70\n',icon_url=('https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png'))
             embed.set_author(name='weapon',icon_url=("https://hub.scpslgame.com/images/thumb/7/72/NEWHUMANCAT.png/120px-NEWHUMANCAT.png"))
-            await interaction.response.edit_message(embed=embed)
+            await interaction.response.edit_message(embed=embed,view=com_18_Attachment())
         if select.values[0] == "3":
             embed = discord.Embed(title="fsp-9",description="시설경비의 기본무기",color=0x5B6370)
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/4d/FSP-9Icon.png/250px-FSP-9Icon.png")
@@ -117,7 +117,7 @@ class com_18_Attachment(discord.ui.View):
             ),
             discord.SelectOption(
                 label="Go home",
-                value="5",
+                value="4",
                 description="무기 선택 리스트로 돌아갑니다."
             )
         ]
@@ -129,6 +129,54 @@ class com_18_Attachment(discord.ui.View):
             embed.add_field(name="zoom",value="1.05x")
             embed.add_field(name="weight",value="+28%")
             await interaction.response.edit_message(embed=embed)
+
         if select.values[0] == "2":
             embed = discord.Embed(title="Extended Barrel",color=0x5B6370)
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/b/ba/COM18Heavy.png")
+            embed.add_field(name="데미지:",value="```ansi\n[2;32m[2;36m+15%[0m[2;32m[0m\n```")
+            embed.add_field(name="관통력:",value="```ansi\n[2;32m[2;36m+15%[0m[2;32m[0m\n```")
+            embed.add_field(name="준비시간:",value="```ansi\n[2;31m+0.09/s[0m\n```")
+            embed.add_field(name="조준속도:",value="```ansi\n[2;31m-35%[0m\n```")
+            embed.add_field(name="길이:",value="```ansi\n[2;31m+45%[0m\n```")
+            embed.add_field(name="무게:",value="```ansi\n[2;31m+69%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+
+        if select.values[0] == "3":
+            embed = discord.Embed(title="Suppressor",color=0x5B6370)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/0/06/COM18Suppressor.png/195px-COM18Suppressor.png")
+            embed.add_field(name="총알정확도:",value="```ansi\n[2;32m[2;36m+25%[0m[2;32m[0m\n```")
+            embed.add_field(name="Gunshot loudness:",value="```ansi\n[2;32m[2;36m-60%[0m[2;32m[0m\n```")
+            embed.add_field(name="준비시간:",value="```ansi\n[2;31m+0.09/s[0m\n```")
+            embed.add_field(name="길이:",value="```ansi\n[2;31m+92%[0m\n```")
+            embed.add_field(name="무게:",value="```ansi\n[2;31m+49%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+
+        if select.values[0] == "4":
+            await interaction.response.edit_message(view=weapon_view())
+
+class Fsp9_attachment(discord.ui.View):
+    @discord.ui.select(
+        placeholder="choose a attachment",
+        min_values=1,
+        max_values=1,
+        options=[
+            discord.SelectOption(
+                label="Holographic Sight",
+                value="1",
+                description="조준시아를 깔끔하게 해줍니다."
+            ),
+            discord.SelectOption(
+                label="Flash Hider",
+                value="2",
+                description="Flash Suppression"
+            ),
+            discord.SelectOption(
+                label="Suppressor",
+                value="2",
+                description="소음기"
+            )
+        ]
+    )
+
+    async def fsp_9_Callback(self,select,interaction):
+        ...

@@ -24,6 +24,18 @@ class Music(commands.Cog):
     @commands.Cog.listener()
     async def on_wavelink_node_ready(self,node: wavelink.Node):
         print(f"{node.identifier} is ready.") # print a message
+    
+    @discord.slash_command()
+    async def join(self, ctx):
+        channel = ctx.author.voice.channel
+        await channel.connect()
+        await ctx.respond("성공적으로 연결되었습니다!")
+    
+    @discord.slash_command()
+    async def join(self, ctx):
+        channel = ctx.author.voice.channel
+        await channel.connect()
+        await ctx.respond("성공적으로 연결되었습니다!")
 
     @discord.slash_command()
     async def play(self,ctx, search: str):
@@ -45,11 +57,10 @@ class Music(commands.Cog):
         await vc.stop()
         await ctx.respond(f"Sucessfully stoped")
     
-    @commands.Cog.listener()
-    async def on_voice_state_update(self, member, before, after):
-        if not member.bot and after.channel is None:
-            if not [m for m in before.channel.members if not m.bot]:
-                await self.get_player(member.guild).teardown()
+    @discord.slash_command()
+    async def leave(self, ctx):
+        await ctx.voice_client.disconnect()
+        await ctx.respond("disconnected :|")
 
 def setup(bot):
     bot.add_cog(Music(bot))
