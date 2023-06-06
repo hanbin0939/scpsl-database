@@ -6,7 +6,7 @@ class weaponary(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
-    @discord.slash_command(name="weaponary")
+    @discord.slash_command(name="weaponary_rework")
     async def weapon(self,ctx):
         await ctx.respond(view=weapon_view())
 

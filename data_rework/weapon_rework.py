@@ -41,7 +41,7 @@ class weapon_view(discord.ui.View):
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/4d/FSP-9Icon.png/250px-FSP-9Icon.png")
             embed.set_footer(text="기본대미지=22.3\n최대대미지=44.6")
             embed.set_image(url="https://hub.scpslgame.com/images/c/c8/FSP-9_Inspect_Animation.gif")
-            await interaction.response.edit_message(embed=embed)
+            await interaction.response.edit_message(embed=embed,view=fsp_9_attachment())
 
 
 class com_15_attachment(discord.ui.View):
@@ -154,29 +154,82 @@ class com_18_Attachment(discord.ui.View):
         if select.values[0] == "4":
             await interaction.response.edit_message(view=weapon_view())
 
-class Fsp9_attachment(discord.ui.View):
+class fsp_9_attachment(discord.ui.View):
     @discord.ui.select(
-        placeholder="choose a attachment",
+        placeholder="choose attachment",
         min_values=1,
         max_values=1,
         options=[
             discord.SelectOption(
-                label="Holographic Sight",
+                label="red dot",
                 value="1",
-                description="조준시아를 깔끔하게 해줍니다."
-            ),
-            discord.SelectOption(
-                label="Flash Hider",
-                value="2",
-                description="Flash Suppression"
+                description="조준경"
             ),
             discord.SelectOption(
                 label="Suppressor",
                 value="2",
-                description="소음기"
+                description="총격음을 줄여줍니다."
+            ),
+            discord.SelectOption(
+                label="확장 개머리판",
+                value="3",
+                description="조준사격 반동을 줄여줍니다."
+            ),
+            discord.SelectOption(
+                label="수직손잡이",
+                value="4",
+                description="반동을 줄여줍니다!"
+            ),
+            discord.SelectOption(
+                label="레이저 사이트",
+                value="5",
+                description="지향사격 정확도를 높여줍니다."
+            ),
+            discord.SelectOption(
+                label="손전등",
+                value="6",
+                description="광원효과"
+            ),
+            discord.SelectOption(
+                label="go home",
+                value="7",
+                description="go back"
             )
         ]
     )
 
-    async def fsp_9_Callback(self,select,interaction):
-        ...
+    async def fsp_9_callback(self, select, interaction):
+        if select.values [0] == "1":
+            embed = discord.Embed(title="red dot")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/e/ec/FSP-9Dot.png/98px-FSP-9Dot.png")
+            embed.add_field(name="zoom",value="x1")
+            embed.add_field(name="weight",value="+18%")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "2":
+            embed = discord.Embed(title="Suppressor")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/0/0e/FSP-9Suppressor.png/150px-FSP-9Suppressor.png")
+            embed.add_field(name="총소리",value="```ansi\n[2;32m-65%[0m\n```")
+            embed.add_field(name="총알 정확도",value="```ansi\n[2;32m+18%[0m\n```")
+            embed.add_field(name="준비시간",value="```ansi\n[2;31m+0.19s[0m\n```")
+            embed.add_field(name="길이",value="```ansi\n[2;31m+41%[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+14%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "3":
+            embed = discord.Embed(title="Extended Stock")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/d1/FSP-9StockExtended.png/120px-FSP-9StockExtended.png")
+            embed.add_field(name="Aiming Accuracy",value="```ansi\n[2;32m+100%[0m\n```")
+            embed.add_field(name="Recoil When Aiming",value="```ansi\n[2;32m-40%[0m\n```")
+            embed.add_field(name="준비시간",value="```ansi\n[2;31m+1.47s[0m\n```")
+            embed.add_field(name="길이",value="```ansi\n[2;31m+51%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "4":
+            embed = discord.Embed(title="수직손잡이")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/1/13/FSP-9GripExtended.png/30px-FSP-9GripExtended.png")
+            embed.add_field(name="반동",value="```ansi\n[2;32m-30%[0m\n```")
+            embed.add_field(name="준비시간",value="```ansi\n[2;31m+0.93/s[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "5":
+            embed = discord.Embed(title="Laser Sight")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/25/FSP-9Laser.png/80px-FSP-9Laser.png")
+            embed.add_field(name="지향사격 정확도",value="+100%")
+            await interaction.response.edit_message(embed=embed)

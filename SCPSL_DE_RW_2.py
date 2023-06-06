@@ -4,12 +4,11 @@ from discord.ext import commands
 from config.data import *
 load_dotenv()
 
-bot = commands.Bot(command_prefix="!",intents=discord.Intents.default(),owner_ids=[759072684461391893])
+bot = commands.Bot(command_prefix="!",intents=discord.Intents.all(),owner_ids=[759072684461391893])
 
 cogs_path = 'cogs'
 cogs_list = ['weapon',
              'music',
-             'mp3'
              ]
 
 for cog in cogs_list:
