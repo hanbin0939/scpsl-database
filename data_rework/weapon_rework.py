@@ -20,6 +20,16 @@ class weapon_view(discord.ui.View):
                 label="FSP-9",
                 value="3",
                 description="시설경비의 주무기"
+            ),
+            discord.SelectOption(
+                label="Crossvec",
+                value='4',
+                description="MTF 이등병의 표준무기"
+            ),
+            discord.SelectOption(
+                label="Ebsillon-11-SR",
+                value="5",
+                description="assult rife"
             )
         ]
     )
@@ -38,10 +48,28 @@ class weapon_view(discord.ui.View):
             await interaction.response.edit_message(embed=embed,view=com_18_Attachment())
         if select.values[0] == "3":
             embed = discord.Embed(title="fsp-9",description="시설경비의 기본무기",color=0x5B6370)
+            embed.set_author(name="weponary",url="https://en.scpslgame.com/index.php?title=Weapons",icon_url="https://hub.scpslgame.com/images/7/76/CUTCONTENTCAT5.png")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/4d/FSP-9Icon.png/250px-FSP-9Icon.png")
             embed.set_footer(text="기본대미지=22.3\n최대대미지=44.6")
             embed.set_image(url="https://hub.scpslgame.com/images/c/c8/FSP-9_Inspect_Animation.gif")
             await interaction.response.edit_message(embed=embed,view=fsp_9_attachment())
+        if select.values[0] == "4":
+            embed = discord.Embed(title="Crossvec",description="구미호 이등병의 표준무기",color=0x70C3FF)
+            embed.set_author(name="weponary",url="https://en.scpslgame.com/index.php?title=Weapons",icon_url="https://hub.scpslgame.com/images/7/76/CUTCONTENTCAT5.png")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/f/f0/CrossvecIcon.png/250px-CrossvecIcon.png")
+            embed.set_image(url="https://hub.scpslgame.com/images/0/09/Crossvec_Equip_Animation.gif")
+            embed.set_footer(text="기본데미지:23.5\n최대대미지:47",icon_url="https://hub.scpslgame.com/index.php?title=File:MTFPrivateIcon.png")
+            await interaction.response.edit_message(embed=embed,view=weapon_view())
+        if select.values[0] == "5":
+            embed = discord.Embed(title="ebsillon-11-SR",description="구미호 상병의 표준무기",color=0x0096FF)
+            embed.set_author(name="weponary",icon_url="https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/120px-WEAPONCATNEW3.png")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/9/96/E11SRIcon.png/250px-E11SRIcon.png")
+            embed.add_field(name="데미지",value="25.1")
+            embed.add_field(name="발사속도",value="570")
+            embed.add_field(name="사거리",value="100m")
+            embed.add_field(name="장전시간",value="3.3/s")
+            embed.add_field(name="준비시간",value="0.8/s")
+            await interaction.response.edit_message(embed=embed,view=weapon_view())
 
 
 class com_15_attachment(discord.ui.View):
@@ -207,6 +235,7 @@ class fsp_9_attachment(discord.ui.View):
             await interaction.response.edit_message(embed=embed)
         if select.values[0] == "2":
             embed = discord.Embed(title="Suppressor")
+            embed.set_author(name="weponary",url="https://en.scpslgame.com/index.php?title=Weapons",icon_url="https://hub.scpslgame.com/images/7/76/CUTCONTENTCAT5.png")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/0/0e/FSP-9Suppressor.png/150px-FSP-9Suppressor.png")
             embed.add_field(name="총소리",value="```ansi\n[2;32m-65%[0m\n```")
             embed.add_field(name="총알 정확도",value="```ansi\n[2;32m+18%[0m\n```")
@@ -233,3 +262,11 @@ class fsp_9_attachment(discord.ui.View):
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/25/FSP-9Laser.png/80px-FSP-9Laser.png")
             embed.add_field(name="지향사격 정확도",value="+100%")
             await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "6":
+            embed = discord.Embed(title="Flashlight",description="```ansi\n[2;32mLight Source[0m\n```")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/f/fb/FSP-9Flashlight.png/80px-FSP-9Flashlight.png")
+            embed.add_field(name="준비시간",value="```ansi\n[2;31m+0.24s[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+16%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "7":
+            await interaction.response.edit_message(view=weapon_view())
