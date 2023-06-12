@@ -13,13 +13,14 @@ class SimpleView(discord.ui.View):
 class Server_Link(discord.ui.View):
     def __init__(self):
         super().__init__(timeout=30)
-        luna = discord.ui.Button(label="LUNA Server",style=discord.ButtonStyle.link,disabled=True,url="https://discord.gg/luna-official-1058752179105693716")
+        luna = discord.ui.Button(label="LUNA Server",style=discord.ButtonStyle.link,url="https://discord.gg/luna-official-1058752179105693716")
         chaous = discord.ui.Button(label="Chaous",style=discord.ButtonStyle.link,url="https://discord.gg/56K7fRbNJr")
-        firebird = discord.ui.Button(label="fire bird",style=discord.ButtonStyle.link, url="https://discord.com/invite/tdST7mf5Yd")
+        firebird = discord.ui.Button(label="fire bird(임시 서비스종료)",style=discord.ButtonStyle.link, url="https://discord.com/invite/tdST7mf5Yd")
         daon = discord.ui.Button(label="DAON",style=discord.ButtonStyle.link, url="https://discord.com/invite/cdhnnS2kVf")
-        s79 = discord.ui.Button(label="079 SERVER",style=discord.ButtonStyle.link, url="https://discord.com/invite/msp2XaNka3")
+        s79 = discord.ui.Button(label="079 SERVER(서비스 종료)",style=discord.ButtonStyle.link, url="https://discord.com/invite/msp2XaNka3")
         jdh = discord.ui.Button(label="JDH (자동핵)",style=discord.ButtonStyle.link, url="https://discord.com/invite/8jJrsEB4gP")
         rdg = discord.ui.Button(label="random game mode",style=discord.ButtonStyle.link, url="https://discord.gg/raendeomgeimmodeu-930837847026585600")
+        sno = discord.ui.Button(label="SNO server",style=discord.ButtonStyle.link,url="https://discord.gg/Hmvmj4Qt42")
         self.add_item(luna)
         self.add_item(chaous)
         self.add_item(firebird)
@@ -27,6 +28,7 @@ class Server_Link(discord.ui.View):
         self.add_item(s79)
         self.add_item(jdh)
         self.add_item(rdg)
+        self.add_item(sno)
 
 
 

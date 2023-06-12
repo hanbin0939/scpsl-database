@@ -3,17 +3,26 @@ import discord
 from discord import default_permissions
 from discord.ext import commands , tasks
 from discord.commands import Option
-from data.beta_data import token  ,weapon
+from data.weaponary import weapon
 from itertools import cycle
+from config.data import *
 guild = 1069174895893827604
 intents=discord.Intents.all()
 intents.message_content = True
 intents.members = True
-bot = commands.Bot(command_prefix='R!', intents=discord.Intents.all())
+
+bot = commands.Bot(command_prefix='>', intents=discord.Intents.all())
 status = cycle(["scpsl database rework bot", "made bt hanbin#0939", "SCP : Secreat Laboratory"])
 
 
 
+cogs_path = 'cogs'
+cogs_list = ['weapon',
+             'music',
+             ]
+
+for cog in cogs_list:
+    bot.load_extension(f'cogs.{cog}')
 
 @bot.event
 async def on_ready():

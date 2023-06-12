@@ -8,7 +8,6 @@ bot = commands.Bot(command_prefix="!",intents=discord.Intents.all(),owner_ids=[7
 
 cogs_path = 'cogs'
 cogs_list = ['weapon',
-             'music',
              ]
 
 for cog in cogs_list:

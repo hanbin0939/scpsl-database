@@ -25,19 +25,13 @@ class Music(commands.Cog):
     async def on_wavelink_node_ready(self,node: wavelink.Node):
         print(f"{node.identifier} is ready.") # print a message
     
-    @discord.slash_command()
-    async def join(self, ctx):
-        channel = ctx.author.voice.channel
-        await channel.connect()
-        await ctx.respond("성공적으로 연결되었습니다!")
-    
-    @discord.slash_command()
+    @commands.command()
     async def join(self, ctx):
         channel = ctx.author.voice.channel
         await channel.connect()
         await ctx.respond("성공적으로 연결되었습니다!")
 
-    @discord.slash_command()
+    @commands.command()
     async def play(self,ctx, search: str):
         vc = ctx.voice_client
         if not vc:
@@ -51,16 +45,43 @@ class Music(commands.Cog):
         await vc.play(song)
         await ctx.respond(f"Now playing: `{vc.source.title}`")
         
-    @discord.slash_command()
+    @commands.command()(brief="Search for a youtube track")
+    async def add(self, ctx, *title : str):
+        # You could have a few choices of commands and say 
+        # !search yt <title>
+        # or !search spotify <title>
+        # or !search soundcloud <title> 
+        chosen_track = await wavelink.YouTubeTrack.search(query=" ".join(title), return_first=True)
+        if chosen_track:
+            self.current_track = chosen_track
+            await ctx.send(f"Added {chosen_track.title} to the Queue")
+            self.vc.queue.put(chosen_track)
+
+    @commands.command()(brief="Skips the current song")
+    async def skip(self, ctx):
+        if self.vc.queue.is_empty:
+            await ctx.send("There are no more tracks!")
+            return 
+        self.current_track = self.vc.queue.get()
+        await self.vc.play(self.current_track)
+    
+    @commands.command()
     async def stop(self,ctx):
         vc = ctx.voice_client
         await vc.stop()
-        await ctx.respond(f"Sucessfully stoped")
+        await ctx.send(f"Sucessfully stoped")
     
-    @discord.slash_command()
+    @commands.command()
     async def leave(self, ctx):
         await ctx.voice_client.disconnect()
-        await ctx.respond("disconnected :|")
+        await ctx.send("disconnected :|")
+    
+    @discord.slash_command()
+    async def play_custom(self, ctx, *, filename):
+        voice = ctx.voice_client
+        voice.play(discord.FFmpegPCMAudio(filename))
+        voice.source = discord.PCMVolumeTransformer(voice.source)
+        voice.source.volume = 1
 
 def setup(bot):
     bot.add_cog(Music(bot))
