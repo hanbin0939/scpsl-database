@@ -50,6 +50,21 @@ class weapon_view(discord.ui.View):
                 label="리볼버",
                 value="9",
                 description="현존 최강 권총"
+            ),
+            discord.SelectOption(
+                label="jailbird",
+                value="10",
+                description="melle wepon"
+            ),
+            discord.SelectOption(
+                label="COM-45",
+                value="11",
+                description="glock-18"
+            ),
+            discord.SelectOption(
+                label="3-X Particle Disruptor",
+                value="12",
+                description="Micro.H.I.D v2"
             )
         ]
     )
@@ -167,6 +182,35 @@ class weapon_view(discord.ui.View):
             embed.add_field(name="지향사격 정확도",value="2°")
             embed.add_field(name="조준사격 정확도",value="0.75°")
             embed.set_footer(text=".44 Mag",icon_url="https://hub.scpslgame.com/images/thumb/f/ff/Icon44cal.png/53px-Icon44cal.png")
+            await interaction.response.edit_message(embed=embed,view=weapon_view())
+        if select.values[0] == "10":
+            embed = discord.Embed(title="jailbird",description="First melle weapon",color=0x33338c)
+            embed.set_author(name="Special weapon",icon_url="https://hub.scpslgame.com/images/thumb/8/87/JailbirdIcon.png/250px-JailbirdIcon.png")
+            embed.set_image(url="https://hub.scpslgame.com/images/1/1d/Jbnormalinspect.gif")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/8/87/JailbirdIcon.png/250px-JailbirdIcon.png")
+            embed.add_field(name="damage",value="50")
+            embed.add_field(name="damage(charged)",value="200")
+            embed.add_field(name="zombie",value="damage * 4")
+            await interaction.response.edit_message(embed=embed,view=weapon_view())
+        if select.values[0] == "11":
+            embed = discord.Embed(title="COM-45",description="RPM=3600",color=0x33338c)
+            embed.set_author(name="Special Weapon",icon_url="https://hub.scpslgame.com/images/thumb/d/d9/IconCom45.png/120px-IconCom45.png")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/d9/IconCom45.png/250px-IconCom45.png")
+            embed.set_image(url="https://hub.scpslgame.com/images/1/10/Com45inspect.gif")
+            embed.add_field(name="damage",value="25")
+            embed.add_field(name="Fire Rate",value="3600")
+            embed.add_field(name="준비시간",value="0.5/s")
+            embed.add_field(name="장전시간",value="2.14/s")
+            await interaction.response.edit_message(embed=embed,view=weapon_view())
+        if select.values[0] == "12":
+            embed = discord.Embed(title="3-X Particle Disruptor",description="Tatical Lazer Blaster",color=0x33338c)
+            embed.set_author(name="Speial Weapon",icon_url="https://hub.scpslgame.com/images/thumb/7/77/IconDisruptor.png/250px-IconDisruptor.png")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/7/77/IconDisruptor.png/250px-IconDisruptor.png")
+            embed.set_image(url="https://hub.scpslgame.com/images/5/58/3xinspect.gif")
+            embed.add_field(name="ammo",value="5")
+            embed.add_field(name="발사속도",value="9")
+            embed.add_field(name="damage",value="250")
+            embed.add_field(name="장전시간",value="5.55/s")
             await interaction.response.edit_message(embed=embed,view=weapon_view())
 
 
@@ -583,3 +627,20 @@ class ebsillon_11_Attachment(discord.ui.View):
             embed.add_field(name="무게",value="```ansi\n[2;31m+20%[0m\n```")
             embed.add_field(name="무게",value="```ansi\n[2;31m+46%[0m\n```")
             await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "5":
+            embed = discord.Embed(title="Suppressor",description="총격음을 줄여줍니다.",color=0x0096FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/c/c4/SuppressorE11.png/100px-SuppressorE11.png")
+            embed.add_field(name="총알정확도",value="```ansi\n[2;34m-65%[0m\n```")
+            embed.add_field(name="총알정확도",value="```ansi\n[2;34m+11%[0m\n```")
+            embed.add_field(name="준비속도",value="```ansi\n[2;31m+0.08/s[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+19%[0m\n```")
+            embed.add_field(name="길이",value="```ansi\n[2;31m+20%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "6":
+            embed = discord.Embed(title="Flash Hider",description="섬광을 없에줍니다.",color=0x0096FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/b4/FlashHiderE11.png/90px-FlashHiderE11.png")
+            embed.add_field(name="준비속도",value="```ansi\n[2;31m+0.04/s[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+1%[0m\n```")
+            embed.add_field(name="길이",value="```ansi\n[2;31m+2%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+
