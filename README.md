@@ -1,5 +1,5 @@
 # scpsl-data
-## Technology Support ---------------
+## Technology Support
 [Ghost_World_discord](https://discord.gg/nXqhQc6HcH)
 -------------------------------------
 
