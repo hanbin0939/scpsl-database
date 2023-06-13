@@ -35,12 +35,28 @@ class weapon_view(discord.ui.View):
                 label="Shoutgun",
                 value="6",
                 description="혼돈의 반란의 산탄총"
+            ),
+            discord.SelectOption(
+                label="Logicer",
+                value="7",
+                description="혼돈의 반란의 기관총"
+            ),
+            discord.SelectOption(
+                label="AK",
+                value="8",
+                description="혼돈의 반란 소총수의 기본무기"
+            ),
+            discord.SelectOption(
+                label="리볼버",
+                value="9",
+                description="현존 최강 권총"
             )
         ]
     )
     async def select_callback(self, select, interaction):
         if select.values[0] == "1":
             embed = discord.Embed(title="com-15", description="기본적인 호신용권총", color=0xadadad)
+            embed.set_author(name='weapon',icon_url=("https://hub.scpslgame.com/images/thumb/7/72/NEWHUMANCAT.png/120px-NEWHUMANCAT.png"))
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/22/COM-15Icon.png/375px-COM-15Icon.png")
             embed.set_image(url='https://hub.scpslgame.com/images/0/02/Com15equip.gif')
             embed.add_field(name="데미지",value="25")
@@ -49,10 +65,11 @@ class weapon_view(discord.ui.View):
             embed.add_field(name="준비시간",value="0.5/s")
             embed.add_field(name="장전시간",value="1.57/s")
             embed.add_field(name="총알정확도",value="0.2°")
-            embed.set_footer(text="스폰장소 : 저위험군 어딘가...",icon_url="https://hub.scpslgame.com/images/thumb/2/22/COM-15Icon.png/250px-COM-15Icon.png")
+            embed.set_footer(text="9x19mm",icon_url="https://hub.scpslgame.com/images/thumb/4/46/Icon9x19mm.png/53px-Icon9x19mm.png")
             await interaction.response.edit_message(embed=embed,view=com_15_attachment())
         if select.values[0] == "2":
             embed = discord.Embed(title='COM-18', description="기본적인 호신용 권총", color=0x575757)
+            embed.set_author(name="weponary",icon_url="https://hub.scpslgame.com/images/thumb/7/75/GuardIcon.png/180px-GuardIcon.png")
             embed.set_thumbnail(url='https://hub.scpslgame.com/images/thumb/2/2e/IconCom18.png/250px-IconCom18.png')
             embed.set_image(url="https://hub.scpslgame.com/images/f/f6/Com18equip.gif")
             embed.add_field(name="데미지",value="21.2")
@@ -60,19 +77,19 @@ class weapon_view(discord.ui.View):
             embed.add_field(name="준비시간",value="0.26/s")
             embed.add_field(name="장전시간",value="2.56/s")
             embed.add_field(name="총알정확도",value="0.2°")
-            embed.set_footer(text='기본적인 호신용권총',icon_url=('https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/180px-WEAPONCATNEW3.png'))
+            embed.set_footer(text="9x19mm",icon_url="https://hub.scpslgame.com/images/thumb/4/46/Icon9x19mm.png/53px-Icon9x19mm.png")
             embed.set_author(name='weapon',icon_url=("https://hub.scpslgame.com/images/thumb/7/72/NEWHUMANCAT.png/120px-NEWHUMANCAT.png"))
             await interaction.response.edit_message(embed=embed,view=com_18_Attachment())
         if select.values[0] == "3":
             embed = discord.Embed(title="fsp-9",description="시설경비의 기본무기",color=0x5B6370)
-            embed.set_author(name="weponary",url="https://en.scpslgame.com/index.php?title=Weapons",icon_url="https://hub.scpslgame.com/images/7/76/CUTCONTENTCAT5.png")
+            embed.set_author(name="Mobile Tack Force",icon_url="https://hub.scpslgame.com/images/thumb/7/75/GuardIcon.png/180px-GuardIcon.png")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/4d/FSP-9Icon.png/250px-FSP-9Icon.png")
             embed.set_footer(text="기본대미지=22.3\n최대대미지=44.6")
             embed.set_image(url="https://hub.scpslgame.com/images/c/c8/FSP-9_Inspect_Animation.gif")
             await interaction.response.edit_message(embed=embed,view=fsp_9_attachment())
         if select.values[0] == "4":
             embed = discord.Embed(title="Crossvec",description="구미호 이등병의 표준무기",color=0x70C3FF)
-            embed.set_author(name="weponary",url="https://en.scpslgame.com/index.php?title=Weapons",icon_url="https://hub.scpslgame.com/images/7/76/CUTCONTENTCAT5.png")
+            embed.set_author(name="Mobile Task Force",icon_url="https://hub.scpslgame.com/images/7/7d/MTFPrivateIcon.png")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/f/f0/CrossvecIcon.png/250px-CrossvecIcon.png")
             embed.set_image(url="https://hub.scpslgame.com/images/9/95/Crossvecinspect.gif")
             embed.add_field(name="데미지",value="23.5")
@@ -83,11 +100,11 @@ class weapon_view(discord.ui.View):
             embed.add_field(name="총알정확도",value="0.17°")
             embed.add_field(name="지향사격 정확도",value="1.7°")
             embed.add_field(name="조준사격 정확도",value="0.2°")
-            embed.set_footer(text="Mobile Task Force",icon_url="https://hub.scpslgame.com/index.php?title=File:MTFPrivateIcon.png")
+            embed.set_footer(text="9x19mm",icon_url="https://hub.scpslgame.com/images/thumb/4/46/Icon9x19mm.png/53px-Icon9x19mm.png")
             await interaction.response.edit_message(embed=embed,view=crossvec_attachment())
         if select.values[0] == "5":
             embed = discord.Embed(title="ebsillon-11-SR",description="구미호 상병의 표준무기",color=0x0096FF)
-            embed.set_author(name="weponary",icon_url="https://hub.scpslgame.com/images/thumb/3/3f/WEAPONCATNEW3.png/120px-WEAPONCATNEW3.png")
+            embed.set_author(name="Mobile Tack Force",icon_url="hhttps://hub.scpslgame.com/images/thumb/1/19/MTFCaptainIcon.png/180px-MTFCaptainIcon.png")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/9/96/E11SRIcon.png/250px-E11SRIcon.png")
             embed.set_image(url="https://hub.scpslgame.com/images/0/0e/E11inspect.gif")
             embed.add_field(name="데미지",value="25.1")
@@ -95,15 +112,63 @@ class weapon_view(discord.ui.View):
             embed.add_field(name="사거리",value="100m")
             embed.add_field(name="장전시간",value="3.3/s")
             embed.add_field(name="준비시간",value="0.8/s")
+            embed.set_footer(text="5.56x45mm",icon_url="https://hub.scpslgame.com/images/thumb/d/d7/Icon556x45.png/53px-Icon556x45.png")
             await interaction.response.edit_message(embed=embed,view=weapon_view())
         if select.values[0] == "6":
             embed = discord.Embed(title="Shotgun",color=0x0D7D35)
+            embed.set_author(name="Chaous insergencuy",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/e/ee/ShotgunIcon.png/250px-ShotgunIcon.png")
             embed.set_image(url="https://hub.scpslgame.com/images/3/32/Shotguninspect.gif")
             embed.add_field(name="데미지",value="66.64")
             embed.add_field(name="발사속도",value="100")
             embed.add_field(name="준비시간",value="0.58/s")
+            embed.add_field(name="사거리",value="18m")
+            embed.set_footer(text="12/70 Buckshot",icon_url="https://hub.scpslgame.com/images/thumb/f/f4/Icon12ga.png/53px-Icon12ga.png")
             await interaction.response.edit_message(embed=embed,view=weapon_view())
+        if select.values[0] =="7":
+            embed = discord.Embed(title="Logicer",description="혼돈의 반란의 기관총",color=0x006826)
+            embed.set_author(name="Chaos Insurgent",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/d/d4/LogicerIcon.png/375px-LogicerIcon.png")
+            embed.set_image(url="https://hub.scpslgame.com/images/2/2f/Logicerinspect.gif")
+            embed.add_field(name="Damage",value="26.9")
+            embed.add_field(name="Fire Rate",value="660")
+            embed.add_field(name="사거리",value="150m")
+            embed.add_field(name="준비시간",value="0.93/s")
+            embed.add_field(name="장전시간",value="5.3/s")
+            embed.add_field(name="총알정확도",value="0.035°")
+            embed.add_field(name="지향사격 정확도",value="3.5°")
+            embed.add_field(name="조준사격정확도",value="0.15°")
+            embed.set_footer(text="7.62x39mm",icon_url="https://hub.scpslgame.com/images/thumb/7/75/Icon762x39.png/53px-Icon762x39.png")
+            await interaction.response.edit_message(embed=embed,view=weapon_view())
+        if select.values[0] == "8":
+            embed = discord.Embed(title="AK",description="혼돈의 반란의 주무기",color=0x008F1C)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/33/NewAKIcon.png/250px-NewAKIcon.png")
+            embed.set_image(url="https://hub.scpslgame.com/images/a/a3/AKinspect.gif")
+            embed.set_author(name="Chaous insergencuy",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
+            embed.add_field(name="damage",value="26.2")
+            embed.add_field(name="발사속도",value="498")
+            embed.add_field(name="사거리",value="100m")
+            embed.add_field(name="준비시간",value="0.54/s")
+            embed.add_field(name="장전시간",value="3/s")
+            embed.add_field(name="총알 정확도",value="0.07°")
+            embed.add_field(name="지향사격 정확도",value="2.5°")
+            embed.add_field(name="조준사격 정확도",value="0.08°")
+            embed.set_footer(text="7.62x39mm",icon_url="https://hub.scpslgame.com/images/thumb/7/75/Icon762x39.png/53px-Icon762x39.png")
+            await interaction.response.edit_message(embed=embed,view=weapon_view())
+        if select.values[0] == "9":
+            embed = discord.Embed(title=".44 Revolver",description="현존 최강 권총",color=0x0D7D35)
+            embed.set_author(name="Chaous insergencuy",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/b5/RevolverIcon.png/375px-RevolverIcon.png")
+            embed.set_image(url="https://hub.scpslgame.com/images/7/76/Revolverrarequip.gif")
+            embed.add_field(name="데미지",value="57.7")
+            embed.add_field(name="발사속도",value="240")
+            embed.add_field(name="준비시간",value="0.45/s")
+            embed.add_field(name="총알정확도",value="0.15°")
+            embed.add_field(name="지향사격 정확도",value="2°")
+            embed.add_field(name="조준사격 정확도",value="0.75°")
+            embed.set_footer(text=".44 Mag",icon_url="https://hub.scpslgame.com/images/thumb/f/ff/Icon44cal.png/53px-Icon44cal.png")
+            await interaction.response.edit_message(embed=embed,view=weapon_view())
+
 
 class com_15_attachment(discord.ui.View):
     @discord.ui.select(
@@ -423,6 +488,98 @@ class crossvec_attachment(discord.ui.View):
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/9/97/CrossvecFlashlight.png/120px-CrossvecFlashlight.png")
             await interaction.response.edit_message(embed=embed)
         if select.values[0] =="9":
-            ...
+            embed = discord.Embed(title="x30 AP mag",description="관통력을 매우 높여줍니다.",color=0x70C3FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/f/fc/30AP.png/50px-30AP.png")
+            embed.add_field(name="탄약 수용량",value="```ansi\n[2;31m-10[0m\n```")
+            embed.add_field(name="데미지",value="```ansi\n[2;31m-15%[0m\n```")
+            embed.add_field(name="관통력",value="```ansi\n[2;34m+200%[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;34m-6%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
         if select.values[0] == "10":
             await interaction.response.edit_message(view=weapon_view())
+
+class ebsillon_11_Attachment(discord.ui.View):
+    @discord.ui.select(
+        placeholder="choose a attachment",
+        max_values=1,
+        min_values=1,
+        options=[
+            discord.SelectOption(
+                label="홀로그램 조준경",
+                value="1",
+                description="조준경"
+            ),
+            discord.SelectOption(
+                label="NV 조준경",
+                value="2",
+                description="화질이 좋은 야간 조준경"
+            ),
+            discord.SelectOption(
+                label="망원 조준경",
+                value="3",
+                description="저격 스코프"
+            ),
+            discord.SelectOption(
+                label="소총총신",
+                value="4",
+                description="조준사격의 최적화된 배럴"
+            ),
+            discord.SelectOption(
+                label="Suppressor",
+                value="5",
+                description="총격음을 줄여줍니다."
+            ),
+            discord.SelectOption(
+                label="Flash Hider",
+                value="6",
+                description="섬광 제거"
+            ),
+            discord.SelectOption(
+                label="머즐부스터",
+                value="7",
+                description="화력이 올라가지만, 명중율 이 줄어듭니다."
+            ),
+            discord.SelectOption(
+                label="보정기",
+                value="8",
+                description="반동을 줄여줍니다."
+            )
+        ]
+    )
+    async def e_callback(self, select, interaction):
+        if select.values[0] == "1":
+            embed = discord.Embed(title="Holographic Sight",color=0x0096FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/7/7b/Holo_E11.png/75px-Holo_E11.png")
+            embed.add_field(name="zoom",value="```ansi\n[2;34mx1[0m\n```")
+            embed.add_field(name="준비시간",value="```ansi\n[2;31m+0.14/s[0m```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+13%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "2":
+            embed = discord.Embed(title="야간 조준경",description="```ansi\n[2;34mNight Vision[0m\n```",color=0x0096FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/bc/NV_E11.png/100px-NV_E11.png")
+            embed.add_field(name="배율",value="```ansi\n[2;34m1.4x\n[0m```")
+            embed.add_field(name="조준시간",value="```ansi\n[2;31m+25%[0m\n```")
+            embed.add_field(name="준비시간",value="```ansi\n[2;31m+0.08/s[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+35%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "3":
+            embed = discord.Embed(title="Telescopic Sight",description="고배율 스코프",color=0x0096FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/4/44/Scope_E11.png/100px-Scope_E11.png")
+            embed.add_field(name="배율",value="```ansi\n[2;34m7.25x\n[0m```")
+            embed.add_field(name="조준사격 정확도",value="```ansi\n[2;34m+33%n[0m```")
+            embed.add_field(name="준비시간",value="```ansi\n[2;31m+0.08/s[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+32%[0m\n```")
+            embed.add_field(name="조준시간",value="```ansi\n[2;31m+30%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "4":
+            embed = discord.Embed(title="Rifle Body",description="조준사격의 최적화된 배럴",color=0x0096FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/28/RifleBody.png/100px-RifleBody.png")
+            embed.add_field(name="데미지",value="```ansi\n[2;34m+7.5%[0m\n```")
+            embed.add_field(name="관통력",value="```ansi\n[2;34m+12.5%[0m\n```")
+            embed.add_field(name="총알정확도",value="```ansi\n[2;34m+54%[0m\n```")
+            embed.add_field(name="발사속도",value="```ansi\n[2;31m-10%[0m\n```")
+            embed.add_field(name="준비속도",value="```ansi\n[2;31m+0.13/s[0m\n```")
+            embed.add_field(name="지향사격 정확도",value="```ansi\n[2;31m-26%[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+20%[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+46%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
