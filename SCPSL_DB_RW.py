@@ -18,7 +18,7 @@ status = cycle(["scpsl database rework bot", "made bt hanbin#0939", "SCP : Secre
 
 cogs_path = 'cogs'
 cogs_list = ['weapon',
-             'music',
+             'scp_list',
              ]
 
 for cog in cogs_list:
@@ -51,4 +51,4 @@ async def add_beta_testing(ctx):
     await user.add_roles(role)
     await ctx.respond("이제 베타 태스팅에 참여할수 있습니다!")
 
-bot.run(token)
+bot.run(token_beta)

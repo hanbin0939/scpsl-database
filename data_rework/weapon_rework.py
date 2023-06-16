@@ -128,7 +128,7 @@ class weapon_view(discord.ui.View):
             embed.add_field(name="장전시간",value="3.3/s")
             embed.add_field(name="준비시간",value="0.8/s")
             embed.set_footer(text="5.56x45mm",icon_url="https://hub.scpslgame.com/images/thumb/d/d7/Icon556x45.png/53px-Icon556x45.png")
-            await interaction.response.edit_message(embed=embed,view=weapon_view())
+            await interaction.response.edit_message(embed=embed,view=ebsillon_11_Attachment())
         if select.values[0] == "6":
             embed = discord.Embed(title="Shotgun",color=0x0D7D35)
             embed.set_author(name="Chaous insergencuy",icon_url="https://hub.scpslgame.com/images/thumb/e/ef/ChaosIcon.png/180px-ChaosIcon.png")
@@ -587,6 +587,46 @@ class ebsillon_11_Attachment(discord.ui.View):
                 label="보정기",
                 value="8",
                 description="반동을 줄여줍니다."
+            ),
+            discord.SelectOption(
+                label="Lightweight Stock",
+                value="9",
+                description="기동성이 매우 좋은 개머리판"
+            ),
+            discord.SelectOption(
+                label="Recoil-Reducing Stock",
+                value="10",
+                description="조준사격 반동을 줄여줍니다."
+            ),
+            discord.SelectOption(
+                label="수직손잡이",
+                value="11",
+                description="반동을 줄여줍니다."
+            ),
+            discord.SelectOption(
+                label="레이저 사이트",
+                value="12",
+                description="지향사격 정확도를 높여줍니다"
+            ),
+            discord.SelectOption(
+                label="드럼탄창",
+                value="13",
+                description="경기관탄창"
+            ),
+            discord.SelectOption(
+                label="30 발 AP탄",
+                value="14",
+                description="관통력을 높여줍니다."
+            ),
+            discord.SelectOption(
+                label="30 발 JHP 탄",
+                value="15",
+                description="데미지를 높이는대신 관통력을 줄어듭니다."
+            ),
+            discord.SelectOption(
+                label="go home",
+                value="16",
+                description="검색 리스트로 돌아갑니다."
             )
         ]
     )
@@ -616,7 +656,7 @@ class ebsillon_11_Attachment(discord.ui.View):
             embed.add_field(name="조준시간",value="```ansi\n[2;31m+30%[0m\n```")
             await interaction.response.edit_message(embed=embed)
         if select.values[0] == "4":
-            embed = discord.Embed(title="Rifle Body",description="조준사격의 최적화된 배럴",color=0x0096FF)
+            embed = discord.Embed(title="Rifle Body",description="조준사격의 최적화된 배럴",color=0x003DCA)
             embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/2/28/RifleBody.png/100px-RifleBody.png")
             embed.add_field(name="데미지",value="```ansi\n[2;34m+7.5%[0m\n```")
             embed.add_field(name="관통력",value="```ansi\n[2;34m+12.5%[0m\n```")
@@ -625,7 +665,7 @@ class ebsillon_11_Attachment(discord.ui.View):
             embed.add_field(name="준비속도",value="```ansi\n[2;31m+0.13/s[0m\n```")
             embed.add_field(name="지향사격 정확도",value="```ansi\n[2;31m-26%[0m\n```")
             embed.add_field(name="무게",value="```ansi\n[2;31m+20%[0m\n```")
-            embed.add_field(name="무게",value="```ansi\n[2;31m+46%[0m\n```")
+            embed.add_field(name="길이",value="```ansi\n[2;31m+46%[0m\n```")
             await interaction.response.edit_message(embed=embed)
         if select.values[0] == "5":
             embed = discord.Embed(title="Suppressor",description="총격음을 줄여줍니다.",color=0x0096FF)
@@ -643,4 +683,61 @@ class ebsillon_11_Attachment(discord.ui.View):
             embed.add_field(name="무게",value="```ansi\n[2;31m+1%[0m\n```")
             embed.add_field(name="길이",value="```ansi\n[2;31m+2%[0m\n```")
             await interaction.response.edit_message(embed=embed)
-
+        if select.values[0] == "7":
+            embed = discord.Embed(title="Muzzle Booster",color=0x0096FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/0/00/MuzzleBoosterE11.png/60px-MuzzleBoosterE11.png")
+            embed.add_field(name="발사속도",value="```ansi\n[2;34m[1;34m+10%[0m[2;34m[0m\n```")
+            embed.add_field(name="반동",value="```ansi\n[2;31m+30%[0m\n```")
+            embed.add_field(name="총알정확도",value="```ansi\n[2;31m-17%[0m\n```")
+            embed.add_field(name="준비속도",value="```ansi\n[2;31m+0.04/s[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+6%[0m\n```")
+            embed.add_field(name="길이",value="```ansi\n[2;31m+1%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "8":
+            embed = discord.Embed(title="Muzzle Brake",description="반동을 줄여줍니다.",color=0x003DCA)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/b/b3/MuzzleBrake_0.png/60px-MuzzleBrake_0.png")
+            embed.add_field(name="반동",value="```ansi\n[2;34m[1;34m-10%[0m[2;34m[0m\n```")
+            embed.add_field(name="총격음",value="```ansi\n[2;31m+20%[0m\n```")
+            embed.add_field(name="준비속도",value="```ansi\n[2;31m+0.04/s[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+2%[0m\n```")
+            embed.add_field(name="길이",value="```ansi\n[2;31m+1%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "9":
+            embed = discord.Embed(title="Lightweight Stock",description="기동성이 뛰어난 개머리판",color=0x0096FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/e/ee/LightStock_0.png/100px-LightStock_0.png")
+            embed.add_field(name="지향사격 정확도",value="```ansi\n[2;34m+18%[0m\n```")
+            embed.add_field(name="준비시간",value="```ansi\n[2;34m-0.12s[0m\n```")
+            embed.add_field(name="길이",value="```ansi\n[2;34m-1%[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;34m-13%[0m\n```")
+            embed.add_field(name="조준사격 반동",value="```ansi\n[2;31m+25%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "10":
+            embed = discord.Embed(title="Recoil-Reducing Stock",description="저격용 개머리판",color=0x003DCA)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/3/36/ShockStock.png/100px-ShockStock.png")
+            embed.add_field(name="조준사격 반동",value="```ansi\n[1;2m[1;34m-33.3%[0m[0m\n```")
+            embed.add_field(name="길이",value="```ansi\n[2;34m-1%[0m\n```")
+            embed.add_field(name="준비시간",value="```ansi\n[2;31m+0.08/s[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+22%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "11":
+            embed = discord.Embed(title="Foregrip",description="반동을 줄여줍니다.",color=0x0096FF)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/c/c8/GripE11.png/60px-GripE11.png")
+            embed.add_field(name="조준사격 반동",value="```ansi\n[1;2m[1;34m-15%[0m[0m\n```")
+            embed.add_field(name="조준속도",value="```ansi\n[2;34m-15%[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+8%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "12":
+            embed = discord.Embed(title="Laser Sight",description="지향사격 정확도를 높여줍니다.",color=0x003DCA)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/a/ac/LaserE11.png/60px-LaserE11.png")
+            embed.add_field(name="Hip-Firing Accuracy",value="```ansi\n[2;34m[1;34m+100%[0m[2;34m[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+11%[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "13":
+            embed = discord.Embed(title="경기관 탄창",description="LMG MAG",color=0x003DCA)
+            embed.set_thumbnail(url="https://hub.scpslgame.com/images/thumb/a/a1/Mag65FMJ.png/60px-Mag65FMJ.png")
+            embed.add_field(name="Magazine Capacity",value="```ansi\n[2;34m[1;34m+25[0m[2;34m[0m\n```")
+            embed.add_field(name="무게",value="```ansi\n[2;31m+79%[0m\n```")
+            embed.add_field(name="장전시간",value="```ansi\n[2;31m[1;31m+2/s[0m[2;31m[0m\n```")
+            await interaction.response.edit_message(embed=embed)
+        if select.values[0] == "16":
+            await interaction.response.edit_message(view=weapon_view())
