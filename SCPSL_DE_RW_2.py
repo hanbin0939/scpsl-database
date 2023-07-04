@@ -8,6 +8,7 @@ bot = commands.Bot(command_prefix="!",intents=discord.Intents.all(),owner_ids=[7
 
 cogs_path = 'cogs'
 cogs_list = ['weapon',
+             'ad'
              ]
 
 for cog in cogs_list:
@@ -19,4 +20,4 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="Warning : this bot is test version"))
 
 
-bot.run(token_beta)
+bot.run(token)
